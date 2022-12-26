@@ -3,23 +3,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBlueLight">
-    <TextView android:id="@+id/tv_modify_pwd"
-        android:text="修改密码"
-        android:textSize="40sp"
-        android:textStyle="italic"
-        android:background="@color/colorGreenLight"
-        android:textColor="@color/colorBlue"
+
+    <TextView
+        android:id="@+id/tv_modify_pwd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"/>
+        android:background="@color/colorGreenLight"
+        android:gravity="center_horizontal"
+        android:text="修改密碼"
+        android:textColor="@color/colorBlue"
+        android:textSize="40sp"
+        android:textStyle="italic" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:text="欢迎用户:"
-        android:textSize="24sp"
-        android:layout_marginStart="30dp"
         android:layout_below="@+id/tv_modify_pwd"
-        android:layout_marginTop="35dp"/>
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="35dp"
+        android:text="歡迎用戶:"
+        android:textSize="24sp" />
     <TextView
         android:id="@+id/tv_stu_number"
         android:layout_width="match_parent"
@@ -29,14 +32,15 @@
         android:layout_below="@+id/tv_modify_pwd"
         android:layout_marginTop="30dp"
         android:padding="5dp"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="初始密码:"
-        android:textSize="24sp"
-        android:layout_marginStart="30dp"
         android:layout_below="@+id/tv_stu_number"
-        android:layout_marginTop="25dp"/>
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="25dp"
+        android:text="初始密碼:"
+        android:textSize="24sp" />
     <EditText
         android:id="@+id/et_original_pwd"
         android:layout_width="match_parent"
@@ -50,14 +54,15 @@
         android:padding="5dp"
         android:inputType="textPassword"
         android:maxLines="1"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="新密码:"
-        android:textSize="24sp"
-        android:layout_marginStart="50dp"
         android:layout_below="@+id/et_original_pwd"
-        android:layout_marginTop="25dp"/>
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="25dp"
+        android:text="新密碼:"
+        android:textSize="24sp" />
     <EditText
         android:id="@+id/et_new_pwd"
         android:layout_width="match_parent"
@@ -71,14 +76,15 @@
         android:padding="5dp"
         android:inputType="textPassword"
         android:maxLines="1"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="确认新密码:"
-        android:textSize="24sp"
-        android:layout_marginStart="20dp"
         android:layout_below="@+id/et_new_pwd"
-        android:layout_marginTop="25dp"/>
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:text="確認新密碼:"
+        android:textSize="24sp" />
     <EditText
         android:id="@+id/et_confirm_new_pwd"
         android:layout_width="match_parent"

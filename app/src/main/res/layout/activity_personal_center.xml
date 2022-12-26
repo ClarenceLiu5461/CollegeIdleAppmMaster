@@ -2,15 +2,17 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView android:id="@+id/tv_personal_center1"
-        android:text="个人中心"
-        android:textSize="40sp"
-        android:textStyle="italic"
-        android:textColor="@color/colorBlack"
+
+    <TextView
+        android:id="@+id/tv_personal_center1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorOrange"
         android:gravity="center_horizontal"
-        android:background="@color/colorOrange"/>
+        android:text="個人中心"
+        android:textColor="@color/colorBlack"
+        android:textSize="40sp"
+        android:textStyle="italic" />
     <ImageView
         android:id="@+id/iv_user_photo"
         android:layout_width="80dp"
@@ -40,16 +42,17 @@
         android:src="@drawable/mynews"
         android:layout_marginStart="20dp"
         android:scaleType="centerCrop"/>
+
     <Button
         android:id="@+id/btn_user_info"
         android:layout_width="290dp"
         android:layout_height="50dp"
-        android:layout_marginStart="80dp"
-        android:text="个人信息"
-        android:textSize="20sp"
         android:layout_below="@+id/tv_student_number"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="5dp"
-        android:background="@drawable/border_radius_primary"/>
+        android:background="@drawable/border_radius_primary"
+        android:text="個人資料"
+        android:textSize="20sp" />
     <ImageView
         android:id="@+id/iv_my_goods"
         android:layout_width="50dp"
@@ -59,16 +62,17 @@
         android:src="@drawable/myrelease"
         android:layout_marginStart="20dp"
         android:scaleType="centerCrop"/>
+
     <Button
         android:id="@+id/btn_my_goods"
         android:layout_width="290dp"
         android:layout_height="50dp"
-        android:layout_marginStart="80dp"
-        android:text="我的发布"
-        android:textSize="20sp"
         android:layout_below="@+id/btn_user_info"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/border_radius_primary"/>
+        android:background="@drawable/border_radius_primary"
+        android:text="我的發佈"
+        android:textSize="20sp" />
     <ImageView
         android:id="@+id/iv_my_collection"
         android:layout_width="50dp"
@@ -97,16 +101,17 @@
         android:src="@drawable/password_modify"
         android:layout_marginStart="20dp"
         android:scaleType="centerCrop"/>
+
     <Button
         android:id="@+id/btn_modify_password"
         android:layout_width="290dp"
         android:layout_height="50dp"
-        android:layout_marginStart="80dp"
-        android:text="修改密码"
-        android:textSize="20sp"
         android:layout_below="@+id/btn_my_collection"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/border_radius_primary"/>
+        android:background="@drawable/border_radius_primary"
+        android:text="修改密碼"
+        android:textSize="20sp" />
     <ImageView
         android:id="@+id/iv_logout"
         android:layout_width="50dp"
@@ -116,16 +121,17 @@
         android:src="@drawable/my_logout"
         android:layout_marginStart="20dp"
         android:scaleType="centerCrop"/>
+
     <Button
         android:id="@+id/btn_logout"
         android:layout_width="290dp"
         android:layout_height="50dp"
-        android:layout_marginStart="80dp"
-        android:text="退出登录"
-        android:textSize="20sp"
         android:layout_below="@+id/btn_modify_password"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/border_radius_primary"/>
+        android:background="@drawable/border_radius_primary"
+        android:text="退出登錄"
+        android:textSize="20sp" />
 
 
     <ImageView

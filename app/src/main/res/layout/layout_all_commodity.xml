@@ -25,9 +25,9 @@
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="一个娃娃"
-            android:textSize="25sp"
-            android:textColor="@color/colorBlue"/>
+            android:text="一個娃娃"
+            android:textColor="@color/colorBlue"
+            android:textSize="25sp" />
         <TextView
             android:id="@+id/tv_type"
             android:layout_width="wrap_content"
@@ -36,14 +36,15 @@
             android:textSize="22sp"
             android:textColor="@color/colorOrange"
             android:layout_marginTop="8dp"/>
+
         <TextView
             android:id="@+id/tv_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="这只娃娃很可爱的!"
+            android:layout_marginTop="6dp"
+            android:text="這隻娃娃很可愛的!"
             android:textColor="@color/colorGreen"
-            android:textSize="18sp"
-            android:layout_marginTop="6dp"/>
+            android:textSize="18sp" />
         <TextView
             android:id="@+id/tv_price"
             android:layout_width="wrap_content"

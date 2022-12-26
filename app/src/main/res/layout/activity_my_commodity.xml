@@ -2,16 +2,17 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <TextView
         android:id="@+id/tv_my_commodity"
-        android:text="我的发布"
-        android:textSize="40sp"
-        android:textStyle="italic"
-        android:textColor="@color/colorBrown"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorBlue"
         android:gravity="center_horizontal"
-        android:background="@color/colorBlue"/>
+        android:text="我的發佈"
+        android:textColor="@color/colorBrown"
+        android:textSize="40sp"
+        android:textStyle="italic" />
     <TextView
         android:id="@+id/tv_stu_id"
         android:layout_width="match_parent"
