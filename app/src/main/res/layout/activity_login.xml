@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="@color/colorWhite">
+    <TextView
+        android:id="@+id/tv_title"
+        android:text="用戶登入"
+        android:textSize="40sp"
+        android:textColor="@color/colorBlack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:background="@color/colorWhite"/>
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_title"
+        android:layout_marginTop="20dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/school" />
+
+    <EditText
+        android:id="@+id/et_username"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="請輸入學號"
+        android:textSize="25sp"
+        android:drawableStart="@drawable/icon_user"
+        android:drawablePadding="8dp"
+        android:background="@drawable/bg_username"
+        android:textColor="@color/colorBlack"
+        android:inputType="number"
+        android:maxLines="1"
+        android:layout_below="@+id/iv_logo"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginTop="20dp"/>
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="請輸入密碼"
+        android:textSize="25sp"
+        android:drawableStart="@drawable/icon_password"
+        android:drawablePadding="8dp"
+        android:background="@drawable/bg_username"
+        android:textColor="@color/colorBlack"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_below="@+id/et_username"
+        android:layout_marginTop="30dp"/>
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="登入完成"-->
+        <!--android:textSize="20sp"-->
+        <!--android:textColor="@color/colorBrown"-->
+        <!--android:layout_below="@+id/et_password"-->
+        <!--android:layout_marginTop="40dp"-->
+        <!--android:layout_marginStart="5dp"/>-->
+    <TextView
+        android:id="@+id/tv_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="註冊帳號"
+        android:textSize="20sp"
+        android:textColor="@color/colorBrown"
+        android:layout_below="@+id/et_password"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="280dp"/>
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_register"
+        android:text="登入"
+        android:textSize="25sp"
+        android:textColor="@color/colorWhite"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/btn_login" />
+
+    <Button
+        android:id="@+id/btn_clear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_register"
+        android:layout_marginTop="110dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/btn_clear"
+        android:text="清除"
+        android:textColor="@color/colorWhite"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_register"
+        android:layout_marginTop="180dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/btn_logout"
+        android:text="退出"
+        android:textColor="@color/colorWhite"
+        android:textSize="25sp" />
+</RelativeLayout>

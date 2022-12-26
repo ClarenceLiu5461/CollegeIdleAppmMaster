@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.leaf.collegeidleapp">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="com.miui.whetstone.permission.ACCESS_PROVIDER" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/launch_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/launch_icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activities.myInfo.MyCollectionActivity"></activity>
+        <activity android:name=".activities.home.CommodityTypeActivity" />
+        <activity android:name=".activities.orders.ReviewCommodityActivity" />
+        <activity android:name=".activities.myInfo.MyCommodityActivity" />
+        <activity android:name=".activities.myInfo.ModifyInfoActivity" />
+        <activity android:name=".activities.myInfo.MyInfoActivity" />
+        <activity android:name=".activities.myInfo.ModifyPwdActivity" />
+        <activity android:name=".activities.orders.MyOrderActivity" />
+        <activity android:name=".activities.myInfo.PersonalCenterActivity" />
+        <activity android:name=".activities.addProduct.AddCommodityActivity" />
+        <activity android:name=".activities.orders.MyBuyActivity" />
+
+
+        <activity android:name=".activities.home.MainActivity" />
+        <activity android:name=".RegisterActivity" />
+
+        <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
