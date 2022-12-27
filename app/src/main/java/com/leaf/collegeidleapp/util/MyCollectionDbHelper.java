@@ -12,13 +12,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 我的收藏数据库连接类
+ * 我的收藏數據庫連接類
  */
 public class MyCollectionDbHelper extends SQLiteOpenHelper {
 
-    //定义数据库表名
+    //定義數據庫表名
     public static final String DB_NAME = "tb_collection";
-    /** 创建收藏信息表 **/
+    /** 創建收藏信息表 **/
     private static final String CREATE_COLLECTION_DB = "create table tb_collection (" +
             "id integer primary key autoincrement," +
             "stuId text," +
@@ -59,7 +59,7 @@ public class MyCollectionDbHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * 通过学号获取我的收藏商品信息
+     * 通過學號獲取我的收藏商品信息
      */
     public List<Collection> readMyCollections(String stuId) {
         List<Collection> collections = new ArrayList<>();
@@ -86,7 +86,7 @@ public class MyCollectionDbHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * 删除收藏的商品项
+     * 刪除收藏的商品項
      */
     public void deleteMyCollection(String title,String description,float price) {
         SQLiteDatabase db = this.getWritableDatabase();
