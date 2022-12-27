@@ -23,7 +23,7 @@ import com.leaf.collegeidleapp.util.CommodityDbHelper;
 import java.io.ByteArrayOutputStream;
 
 /**
- * 物品发布界面Activity类
+ * 物品發布界面Activity類
  */
 public class AddCommodityActivity extends AppCompatActivity {
 
@@ -36,11 +36,11 @@ public class AddCommodityActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_commodity);
-        //取出学号
+        //取出學號
         tvStuId = findViewById(R.id.tv_student_id);
         tvStuId.setText(this.getIntent().getStringExtra("user_id"));
         Button btnBack = findViewById(R.id.btn_back);
-        //返回按钮点击事件
+        //返回按鈕點擊事件
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,22 +62,22 @@ public class AddCommodityActivity extends AppCompatActivity {
         etDescription = findViewById(R.id.et_description);
         spType = findViewById(R.id.spn_type);
         Button btnPublish = findViewById(R.id.btn_publish);
-        //发布按钮点击事件
+        //發布按鈕點擊事件
         btnPublish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //先检查合法性
+                //先檢查合法性
                 if(CheckInput()) {
                     CommodityDbHelper dbHelper = new CommodityDbHelper(getApplicationContext(), CommodityDbHelper.DB_NAME, null, 1);
                     Commodity commodity = new Commodity();
-                    //把图片先转化成bitmap格式
+                    //把圖片先轉化成bitmap格式
                     BitmapDrawable drawable = (BitmapDrawable) ivPhoto.getDrawable();
                     Bitmap bitmap = drawable.getBitmap();
-                    //二进制数组输出流
+                    //二進制數組輸出流
                     ByteArrayOutputStream byStream = new ByteArrayOutputStream();
-                    //将图片压缩成质量为100的PNG格式图片
+                    //將圖片壓縮成質量為100的PNG格式圖片
                     bitmap.compress(Bitmap.CompressFormat.PNG, 100, byStream);
-                    //把输出流转换为二进制数组
+                    //把輸出流轉換為二進制數組
                     byte[] byteArray = byStream.toByteArray();
                     commodity.setPicture(byteArray);
                     commodity.setTitle(etTitle.getText().toString());
@@ -87,10 +87,10 @@ public class AddCommodityActivity extends AppCompatActivity {
                     commodity.setDescription(etDescription.getText().toString());
                     commodity.setStuId(tvStuId.getText().toString());
                     if (dbHelper.AddCommodity(commodity)) {
-                        Toast.makeText(getApplicationContext(), "商品信息发布成功!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "商品信息發布成功!", Toast.LENGTH_SHORT).show();
                         finish();
                     }else {
-                        Toast.makeText(getApplicationContext(), "商品信息发布失败!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "商品信息發布失敗!", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -101,9 +101,9 @@ public class AddCommodityActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (requestCode == 1) {
-            //从相册返回的数据
+            //從相冊返回的數據
             if (data != null) {
-                //得到图片的全路径
+                //得到圖片的全路徑
                 Uri uri = data.getData();
                 ivPhoto.setImageURI(uri);
             }
@@ -111,7 +111,7 @@ public class AddCommodityActivity extends AppCompatActivity {
     }
 
     /**
-     * 检查输入是否合法
+     * 檢查輸入是否合法
      */
     public boolean CheckInput() {
         String title = etTitle.getText().toString();
@@ -120,23 +120,23 @@ public class AddCommodityActivity extends AppCompatActivity {
         String phone = etPhone.getText().toString();
         String description = etDescription.getText().toString();
         if (title.trim().equals("")) {
-            Toast.makeText(this,"商品标题不能为空!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"商品標題不能為空!",Toast.LENGTH_SHORT).show();
             return false;
         }
         if (price.trim().equals("")) {
-            Toast.makeText(this,"商品价格不能为空!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"商品價格不能為空!",Toast.LENGTH_SHORT).show();
             return false;
         }
-        if (type.trim().equals("请选择类别")) {
-            Toast.makeText(this,"商品类别未选择!",Toast.LENGTH_SHORT).show();
+        if (type.trim().equals("請選擇類別")) {
+            Toast.makeText(this,"商品類別未選擇!",Toast.LENGTH_SHORT).show();
             return false;
         }
         if (phone.trim().equals("")) {
-            Toast.makeText(this,"手机号码不能为空!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"手機號碼不能為空!",Toast.LENGTH_SHORT).show();
             return false;
         }
         if (description.trim().equals("")) {
-            Toast.makeText(this,"商品描述不能为空!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"商品描述不能為空!",Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
