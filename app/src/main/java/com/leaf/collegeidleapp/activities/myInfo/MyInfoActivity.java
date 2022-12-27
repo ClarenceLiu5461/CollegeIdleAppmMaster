@@ -39,7 +39,6 @@ public class MyInfoActivity extends AppCompatActivity {
         tvStuName = findViewById(R.id.tv_stu_name);
         tvStuMajor = findViewById(R.id.tv_stu_major);
         tvStuPhone = findViewById(R.id.tv_stu_phone);
-        tvStuQq = findViewById(R.id.tv_stu_qq);
         tvStuAddress = findViewById(R.id.tv_stu_address);
         StudentDbHelper dbHelper = new StudentDbHelper(getApplicationContext(),StudentDbHelper.DB_NAME,null,1);
         LinkedList<Student> students = dbHelper.readStudents(tvUserNumber.getText().toString());
@@ -48,14 +47,12 @@ public class MyInfoActivity extends AppCompatActivity {
                 tvStuName.setText(student.getStuName());
                 tvStuMajor.setText(student.getStuMajor());
                 tvStuPhone.setText(student.getStuPhone());
-                tvStuQq.setText(student.getStuQq());
                 tvStuAddress.setText(student.getStuAddress());
             }
         }else {
             tvStuName.setText("暂未填写");
             tvStuMajor.setText("暂未填写");
             tvStuPhone.setText("暂未填写");
-            tvStuQq.setText("暂未填写");
             tvStuAddress.setText("暂未填写");
         }
         Button btnModifyInfo = findViewById(R.id.btn_modify_info);
@@ -82,7 +79,6 @@ public class MyInfoActivity extends AppCompatActivity {
                         tvStuName.setText(student.getStuName());
                         tvStuMajor.setText(student.getStuMajor());
                         tvStuPhone.setText(student.getStuPhone());
-                        tvStuQq.setText(student.getStuQq());
                         tvStuAddress.setText(student.getStuAddress());
                     }
                 }

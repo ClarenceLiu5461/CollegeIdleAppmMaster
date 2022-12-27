@@ -39,7 +39,6 @@ public class ModifyInfoActivity extends AppCompatActivity {
         etStuName = findViewById(R.id.et_stu_name);
         etMajor = findViewById(R.id.et_stu_major);
         etPhone = findViewById(R.id.et_stu_phone);
-        etQq = findViewById(R.id.et_stu_qq);
         etAddress = findViewById(R.id.et_stu_address);
         StudentDbHelper dbHelper = new StudentDbHelper(getApplicationContext(),StudentDbHelper.DB_NAME,null,1);
         LinkedList<Student> students = dbHelper.readStudents(tvStuNumber.getText().toString());
@@ -65,7 +64,6 @@ public class ModifyInfoActivity extends AppCompatActivity {
                     student.setStuName(etStuName.getText().toString());
                     student.setStuMajor(etMajor.getText().toString());
                     student.setStuPhone(etPhone.getText().toString());
-                    student.setStuQq(etQq.getText().toString());
                     student.setStuAddress(etAddress.getText().toString());
                     dbHelper.saveStudent(student);
                     Toast.makeText(getApplicationContext(),"用户信息保存成功!",Toast.LENGTH_SHORT).show();
@@ -81,7 +79,6 @@ public class ModifyInfoActivity extends AppCompatActivity {
         String StuName = etStuName.getText().toString();
         String StuMajor = etMajor.getText().toString();
         String StuPhone = etPhone.getText().toString();
-        String StuQq = etQq.getText().toString();
         String StuAddress = etAddress.getText().toString();
         if(StuName.trim().equals("")) {
             Toast.makeText(this,"姓名不能为空!",Toast.LENGTH_SHORT).show();
@@ -93,10 +90,6 @@ public class ModifyInfoActivity extends AppCompatActivity {
         }
         if(StuPhone.trim().equals("")) {
             Toast.makeText(this,"联系方式不能为空!",Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        if(StuQq.trim().equals("")) {
-            Toast.makeText(this,"QQ号不能为空!",Toast.LENGTH_SHORT).show();
             return false;
         }
         if(StuAddress.trim().equals("")) {

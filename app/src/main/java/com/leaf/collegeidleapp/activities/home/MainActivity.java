@@ -44,39 +44,39 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // 设置布局
+        // 設置佈局
         setContentView(R.layout.activity_main);
         lvAllCommodity = findViewById(R.id.lv_all_commodity);
         dbHelper = new CommodityDbHelper(getApplicationContext(), CommodityDbHelper.DB_NAME, null, 1);
         adapter = new AllCommodityAdapter(getApplicationContext());
         allCommodities = dbHelper.readAllCommodities();
         adapter.setData(allCommodities);
-        // 设置Viewlist的适配器
+        // 設置Viewlist的適配器
         lvAllCommodity.setAdapter(adapter);
-        // 获取上一个页面的存储对象
+        // 抓取上個頁面的儲存對象
         final Bundle bundle = this.getIntent().getExtras();
         final String Uid = bundle.getString("username");
 
         final TextView tvStuNumber = findViewById(R.id.tv_student_number);
         String str = "";
         if (bundle != null) {
-            // 取数据
-            str = "欢迎" + bundle.getString("username") + ",你好!";
+            // 抓取數據
+            str = "歡迎" + bundle.getString("username") + ",你好!";
 
         }
         tvStuNumber.setText(str);
-        //当前登录的学生账号
+        //目前登入的學生帳號
         final String stuNum = tvStuNumber.getText().toString().substring(2, tvStuNumber.getText().length() - 4);
-Log.d("MainActivity测试用户id",stuNum);
+Log.d("MainActivity測試用戶id",stuNum);
 
-        //跳转到添加物品界面
+        //跳轉到添加商品介面
         ImageButton IbAddProduct = findViewById(R.id.ib_add_product);
         IbAddProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AddCommodityActivity.class);
                 if (bundle != null) {
-                    //获取学生学号
+                    //獲取學生學號
                     bundle.putString("user_id", stuNum);
                     bundle.putString("uid",bundle.getString("username"));//把uid传到下一个控件
                     intent.putExtras(bundle);
@@ -85,28 +85,28 @@ Log.d("MainActivity测试用户id",stuNum);
             }
         });
 
-        //跳转到个人中心界面
+        //跳轉到個人中心介面
         ImageButton IbPersonalCenter = findViewById(R.id.ib_personal_center);
         IbPersonalCenter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, PersonalCenterActivity.class);
                 if (bundle != null) {
-                    //获取学生学号
+                    //抓取學生學號
                     bundle.putString("username1", stuNum);
                     intent.putExtras(bundle);
                 }
                 startActivity(intent);
             }
         });
-        //跳转到售出订单页面
+        //跳轉到售出訂單介面
         ImageButton ibDingdan = findViewById(R.id.dingdan);
         ibDingdan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MyOrderActivity.class);
                 if (bundle != null) {
-                    //获取学生学号
+                    //抓取學生學號
                     bundle.putString("Uid", stuNum);
                     intent.putExtras(bundle);
                 }
@@ -114,14 +114,14 @@ Log.d("MainActivity测试用户id",stuNum);
             }
         });
 
-        //跳转到我买到的订单页面
+        //跳轉到我買到的訂單頁面
         ImageButton ibBuy = findViewById(R.id.dingdan_buy_ib);
         ibBuy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MyBuyActivity.class);
                 if (bundle != null) {
-                    //获取学生学号
+                    //抓取學生學號
                     bundle.putString("Uid", stuNum);
                     intent.putExtras(bundle);
                 }
@@ -141,7 +141,7 @@ Log.d("MainActivity测试用户id",stuNum);
                 lvAllCommodity.setAdapter(adapter);
             }
         });
-        //为每一个item设置点击事件
+        //設置每個item的點擊事件
         lvAllCommodity.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -160,38 +160,38 @@ Log.d("MainActivity测试用户id",stuNum);
             }
         });
 
-        // 长按购买事件
+        // 長按購買事件
         lvAllCommodity.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                builder.setTitle("提示:").setMessage("确定购买此商品吗?").setIcon(R.drawable.icon_user).setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                builder.setTitle("提示:").setMessage("確定購買此商品嗎?").setIcon(R.drawable.icon_user).setNegativeButton("取消", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
                     }
-                }).setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                }).setPositiveButton("確定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
                         Commodity commodity = (Commodity) adapter.getItem(position);
-                        //添加商品到订单表（order）
+                        //添加商品到訂單表（order）
                         MyOrderDbHelper myOrderDbHelper = new MyOrderDbHelper(getApplicationContext(), MyOrderDbHelper.DB_NAME, null, 1);
                         Order order = new Order();
-                        order.setBuyId(Uid);//buyid是购买方的id，stuNum是当前登录的学生学号
+                        order.setBuyId(Uid);//buyid是買方的id，stuNum是目前登入的學生學號
                         order.setDescription(commodity.getDescription());
                         order.setPhone(commodity.getPhone());
                         order.setPicture(commodity.getPicture());
                         order.setPrice(commodity.getPrice());
                         order.setTitle(commodity.getTitle());
-                        order.setUserId(commodity.getStuId());//设置物品主人id（卖方id）
+                        order.setUserId(commodity.getStuId());//設置物品主人id（賣方id）
 
-                        //order.setUserId(commodity.getStuId());//设置物品主人id
+                        //order.setUserId(commodity.getStuId());//設置物品主人id
 
                         myOrderDbHelper.addMyOrder(order);
-                        //删除商品
+                        //刪除商品
                         dbHelper.deleteMyCommodity(commodity.getTitle(),commodity.getDescription(),commodity.getPrice());
-                        Toast.makeText(MainActivity.this,"购买成功!",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this,"購買成功",Toast.LENGTH_SHORT).show();
                     }
                 }).show();
                 return true;
@@ -199,7 +199,7 @@ Log.d("MainActivity测试用户id",stuNum);
         });
 
 
-        //点击不同的类别,显示不同的商品信息
+        //點擊不同的類別,顯示不同的商品資訊
         ibLearning = findViewById(R.id.ib_learning_use);
         ibElectronic = findViewById(R.id.ib_electric_product);
         ibDaily = findViewById(R.id.ib_daily_use);
@@ -234,7 +234,7 @@ Log.d("MainActivity测试用户id",stuNum);
                 bundle2.putInt("status",3);
                 bundle2.putString("Uid",Uid);
 
-                Log.d("这是生活用品:",Uid);
+                Log.d("這是生活用品:",Uid);
 
                 Intent intent = new Intent(MainActivity.this,CommodityTypeActivity.class);
                 intent.putExtras(bundle2);
