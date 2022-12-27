@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 我的发布物品Activity类
+ * 我的發布物品Activity類
  */
 public class MyCommodityActivity extends AppCompatActivity {
 
@@ -37,7 +37,7 @@ public class MyCommodityActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_commodity);
         TextView tvBack = findViewById(R.id.tv_back);
-        //点击返回销毁当前界面
+        //點擊返回銷毀當前界面
         tvBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,33 +52,33 @@ public class MyCommodityActivity extends AppCompatActivity {
         myCommodities = dbHelper.readMyCommodities(tvStuId.getText().toString());
         adapter.setData(myCommodities);
         lvMyCommodity.setAdapter(adapter);
-        //长按点击事件
+        //長按點擊事件
         lvMyCommodity.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
-                //注意,这里的content不能写getApplicationContent();
+                //注意,這里的content不能寫getApplicationContent();
                 AlertDialog.Builder builder = new AlertDialog.Builder(MyCommodityActivity.this);
-                builder.setTitle("提示:").setMessage("确认删除此商品项吗?").setIcon(R.drawable.icon_user).setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                builder.setTitle("提示:").setMessage("確認刪除此商品項嗎?").setIcon(R.drawable.icon_user).setNegativeButton("取消", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
                     }
-                }).setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                }).setPositiveButton("確定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
-                        //根据商品名称,商品描述和价格执行删除操作
+                        //根據商品名稱,商品描述和價格執行刪除操作
                         Commodity commodity = (Commodity) adapter.getItem(position);
                         dbHelper.deleteMyCommodity(commodity.getTitle(),commodity.getDescription(),commodity.getPrice());
-                        //数据一样,可以直接用,关联删除
+                        //數據一樣,可以直接用,關聯刪除
                         //dbHelper2.deleteMyCollection(commodity.getTitle(),commodity.getDescription(),commodity.getPrice());
-                        Toast.makeText(MyCommodityActivity.this,"删除成功!",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MyCommodityActivity.this,"刪除成功!",Toast.LENGTH_SHORT).show();
                     }
                 }).show();
                 return false;
             }
         });
-        //刷新界面点击事件
+        //刷新界面點擊事件
         TextView tvRefresh = findViewById(R.id.tv_refresh);
         tvRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
