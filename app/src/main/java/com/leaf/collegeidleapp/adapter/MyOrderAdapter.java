@@ -20,7 +20,7 @@ import java.util.List;
 
 
 /**
- * 我的出售订单Adapter类
+ * 所有物品的適配器Adapter類
  */
 public class MyOrderAdapter extends BaseAdapter {
 
@@ -72,7 +72,7 @@ public class MyOrderAdapter extends BaseAdapter {
         return convertView;
     }
 
-    //定义静态类,包含每一个item的所有元素
+    //定義靜態類,包含每一個item的所有元素
     static class ViewHolder {
         ImageView ivCommodity;
         TextView tvTitle,tvDescription,tvPrice,tvPhone;
