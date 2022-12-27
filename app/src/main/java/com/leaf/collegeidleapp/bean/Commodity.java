@@ -1,25 +1,25 @@
 package com.leaf.collegeidleapp.bean;
 
 /**
- * 商品实体类
+ * 商品實體類
  */
 public class Commodity {
 
-    //编号
+    //編號
     private Integer id;
-    //标题
+    //標題
     private String title;
-    //类别
+    //類別
     private String category;
-    //价格
+    //價格
     private float price;
-    //联系方式
+    //聯系方式
     private String phone;
     //商品描述
     private String description;
-    //商品图片,以二进制字节存储
+    //商品圖片,以二進制位元組存儲
     private byte[] picture;
-    //用户学号
+    //用戶學號
     private String stuId;
 
     public Integer getId() {
