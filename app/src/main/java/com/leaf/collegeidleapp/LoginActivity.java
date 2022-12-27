@@ -60,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         Button btnClear = findViewById(R.id.btn_clear);
-        // 清除EditText內容
+        // 清除EditText內容.
         btnClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
