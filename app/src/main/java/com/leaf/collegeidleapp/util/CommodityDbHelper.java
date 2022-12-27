@@ -13,14 +13,14 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * 商品数据库类
+ * 商品數據庫類
  */
 public class CommodityDbHelper extends SQLiteOpenHelper {
 
-    //定义商品表
+    //定義商品表
     public static final String DB_NAME = "tb_commodity";
 
-    /**创建商品表*/
+    /**創建商品表*/
     private static final String CREATE_COMMODITY_DB = "create table tb_commodity(" +
             "id integer primary key autoincrement," +
             "title text," +
@@ -64,7 +64,7 @@ public class CommodityDbHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * 通过学号查找我的发布物品信息
+     * 通過學號查找我的發布物品信息
      */
     public List<Commodity> readMyCommodities(String stuId) {
         List<Commodity> myCommodities = new ArrayList<>();
@@ -93,7 +93,7 @@ public class CommodityDbHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * 获取所有的商品信息
+     * 獲取所有的商品信息
      */
     public List<Commodity> readAllCommodities() {
         List<Commodity> allCommodities = new ArrayList<>();
@@ -124,7 +124,7 @@ public class CommodityDbHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * 根据商品名称删除商品
+     * 根據商品名稱刪除商品
      */
     public void deleteMyCommodity(String title,String description,float price) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -135,7 +135,7 @@ public class CommodityDbHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * 读取不同类别的商品信息
+     * 讀取不同類別的商品信息
      */
     public List<Commodity> readCommodityType(String category) {
         List<Commodity> differentTypes = new ArrayList<>();
