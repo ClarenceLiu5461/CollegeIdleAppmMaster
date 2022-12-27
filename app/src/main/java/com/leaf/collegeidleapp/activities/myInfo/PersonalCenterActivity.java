@@ -14,7 +14,7 @@ import com.leaf.collegeidleapp.R;
 import com.leaf.collegeidleapp.activities.orders.MyOrderActivity;
 
 /**
- * 个人中心主界面Activity类
+ * 個人中心主界面Activity類
  */
 public class PersonalCenterActivity extends AppCompatActivity {
 
@@ -24,7 +24,7 @@ public class PersonalCenterActivity extends AppCompatActivity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_center);
-        //取出登录时的登录名
+        //取出登錄時的登錄名
         TvStuNumber = findViewById(R.id.tv_student_number);
         String StuNumber = this.getIntent().getStringExtra("username1");
         TvStuNumber.setText(StuNumber);
@@ -36,7 +36,7 @@ public class PersonalCenterActivity extends AppCompatActivity {
                 finish();
             }
         });
-        //点击修改密码按钮
+        //點擊修改密碼按鈕
         final Button btnModifyPwd = findViewById(R.id.btn_modify_password);
         btnModifyPwd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,7 +48,7 @@ public class PersonalCenterActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //点击查看我的发布按钮
+        //點擊查看我的發布按鈕
         Button btnMyGoods = findViewById(R.id.btn_my_goods);
         btnMyGoods.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +60,7 @@ public class PersonalCenterActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //点击查看我的收藏按钮
+        //點擊查看我的收藏按鈕
         Button btnMyCollection = findViewById(R.id.btn_my_collection);
         btnMyCollection.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,7 +72,7 @@ public class PersonalCenterActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //点击个人信息按钮
+        //點擊個人信息按鈕
         Button btnUserInfo = findViewById(R.id.btn_user_info);
         btnUserInfo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,7 +86,7 @@ public class PersonalCenterActivity extends AppCompatActivity {
         });
 
 
-        //点击出售订单记录按钮
+        //點擊出售訂單記錄按鈕
         Button btnMyOrder = findViewById(R.id.btn_order);
         btnMyOrder.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,17 +101,17 @@ public class PersonalCenterActivity extends AppCompatActivity {
 
 
 
-        //退出登录按钮点击事件
+        //退出登錄按鈕點擊事件
         Button btnLogOut = findViewById(R.id.btn_logout);
         btnLogOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(PersonalCenterActivity.this);
-                builder.setTitle("提示:").setMessage("确认退出系统吗?").setIcon(R.drawable.icon_user).setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                builder.setTitle("提示:").setMessage("確認退出系統嗎?").setIcon(R.drawable.icon_user).setPositiveButton("確定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
-                        //跳转到登录界面
+                        //跳轉到登錄界面
                         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                         startActivity(intent);
                     }
