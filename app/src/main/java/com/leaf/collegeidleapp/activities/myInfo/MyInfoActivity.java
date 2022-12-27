@@ -15,7 +15,7 @@ import com.leaf.collegeidleapp.util.StudentDbHelper;
 import java.util.LinkedList;
 
 /**
- * 我的个人信息活动类
+ * 我的個人信息活動類
  */
 public class MyInfoActivity extends AppCompatActivity {
 
@@ -26,14 +26,14 @@ public class MyInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_info);
         Button btnBack = findViewById(R.id.btn_back);
-        //返回点击事件,销毁当前界面
+        //返回點擊事件,銷毀當前界面
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
-        //从bundle中获取用户账号/学号
+        //從bundle中獲取用戶賬號/學號
         final TextView tvUserNumber = findViewById(R.id.tv_stu_number);
         tvUserNumber.setText(this.getIntent().getStringExtra("stu_number1"));
         tvStuName = findViewById(R.id.tv_stu_name);
@@ -50,13 +50,13 @@ public class MyInfoActivity extends AppCompatActivity {
                 tvStuAddress.setText(student.getStuAddress());
             }
         }else {
-            tvStuName.setText("暂未填写");
-            tvStuMajor.setText("暂未填写");
-            tvStuPhone.setText("暂未填写");
-            tvStuAddress.setText("暂未填写");
+            tvStuName.setText("暫未填寫");
+            tvStuMajor.setText("暫未填寫");
+            tvStuPhone.setText("暫未填寫");
+            tvStuAddress.setText("暫未填寫");
         }
         Button btnModifyInfo = findViewById(R.id.btn_modify_info);
-        //跳转到修改用户信息界面
+        //跳轉到修改用戶信息界面
         btnModifyInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,7 +67,7 @@ public class MyInfoActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //刷新按钮点击事件
+        //刷新按鈕點擊事件
         TextView tvRefresh = findViewById(R.id.tv_refresh);
         tvRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
