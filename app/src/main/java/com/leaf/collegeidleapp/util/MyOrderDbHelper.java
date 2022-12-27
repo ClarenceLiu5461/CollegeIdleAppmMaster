@@ -16,23 +16,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 订单数据库连接类
+ * 訂單數據庫連接類
  */
 public class MyOrderDbHelper extends SQLiteOpenHelper {
 
 
 
-    //定义数据库表名
+    //定義數據庫表名
     public static final String DB_NAME = "tb_order";
-    /** 创建数据库连接类 **/
+    /** 創建數據庫連接類 **/
     private static final String CREATE_COLLECTION_DB = "create table tb_order (" +
-            "id integer primary key autoincrement," +//买方id
-            "userId integer," +   //卖方ID
+            "id integer primary key autoincrement," +//買方id
+            "userId integer," +   //賣方ID
             "picture blob," +      //照片
             "title text," +
             "description text," +
             "price float," +
-            "buyId text," +//买方id
+            "buyId text," +//買方id
             "phone text )";
 
     public MyOrderDbHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
@@ -50,7 +50,7 @@ public class MyOrderDbHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * 添加我的订单
+     * 添加我的訂單
      */
     public void addMyOrder(Order Order) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -67,7 +67,7 @@ public class MyOrderDbHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * 通过学号获取我的订单信息
+     * 通過學號獲取我的訂單信息
      */
     public List<Order> readMyOrder(String userId) {
         List<Order> orders = new ArrayList<>();
@@ -94,7 +94,7 @@ public class MyOrderDbHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * 根据买方id查询(查询我的订单)
+     * 根據買方id查詢(查詢我的訂單)
      */
     @SuppressLint("LongLogTag")
     public List<Order> readMyBuy(String buyid) {
@@ -105,23 +105,23 @@ public class MyOrderDbHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("select * from tb_order where buyId=?",new String[]{buyid});
         //Cursor cursor4 = db.rawQuery("select * from tb_order",null);
-        //Log.d("测试一共有多少条数据：", String.valueOf(cursor4.getCount()));
+        //Log.d("測試一共有多少條數據：", String.valueOf(cursor4.getCount()));
         Log.d("测试根据id查询有多少条数据：", String.valueOf(cursor.getCount()));
 
 //        cursor4.moveToFirst();
 //        if(cursor4.moveToFirst()){
 //            do {
 //                String title = cursor4.getString(cursor4.getColumnIndex("title"));
-//                Log.d("测试MyOrder的title", String.valueOf(title));
+//                Log.d("測試MyOrder的title", String.valueOf(title));
 //                int id = cursor4.getInt(cursor.getColumnIndex("userId"));
-//                Log.d("测试MyOrder的id", String.valueOf(id));
+//                Log.d("測試MyOrder的id", String.valueOf(id));
 //
 //            }while (cursor4.moveToNext());
 //        }
         if(cursor.moveToFirst()) {
-            do {
-                Log.d("提示：：", "进来了");
-                Log.d("测试id查询：", cursor.getString(cursor.getColumnIndex("buyId")));
+            do {               
+                Log.d("提示：：", "進來了");
+                Log.d("測試id查詢：", cursor.getString(cursor.getColumnIndex("buyId")));
 
                 String title = cursor.getString(cursor.getColumnIndex("title"));
                 float price = cursor.getFloat(cursor.getColumnIndex("price"));
@@ -142,7 +142,7 @@ public class MyOrderDbHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * 删除订单商品项
+     * 刪除訂單商品項
      */
     public void deleteMyOrder(String title,String description,float price) {
         SQLiteDatabase db = this.getWritableDatabase();
