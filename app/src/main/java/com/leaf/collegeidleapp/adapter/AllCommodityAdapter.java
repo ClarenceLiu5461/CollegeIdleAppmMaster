@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * 主界面所有商品列表的适配器
+ * 主界面所有商品列表的適配器
  */
 public class AllCommodityAdapter extends BaseAdapter {
 
@@ -26,7 +26,7 @@ public class AllCommodityAdapter extends BaseAdapter {
     private LayoutInflater layoutInflater;
 
     private List<Commodity> commodities = new ArrayList<>();
-    //对每一个item保存其位置
+    //對每一個item保存其位置
     HashMap<Integer,View> location = new HashMap<>();
 
     public AllCommodityAdapter(Context context) {
@@ -39,7 +39,7 @@ public class AllCommodityAdapter extends BaseAdapter {
         notifyDataSetChanged();//不用重新刷新Activity，通知Activity更新ListView
     }
 
-    // 显示列表个数
+    // 顯示列表個數
     @Override
     public int getCount() {
         return commodities.size();
@@ -73,7 +73,7 @@ public class AllCommodityAdapter extends BaseAdapter {
         return convertView;
     }
 
-    //定义静态类,定义每一个item的所有元素
+    //定義靜態類,定義每一個item的所有元素
     static class ViewHolder {
         ImageView ivCommodity;
         TextView tvTitle,tvType,tvDescription,tvPrice;
@@ -89,7 +89,7 @@ public class AllCommodityAdapter extends BaseAdapter {
             tvPrice.setText(String.valueOf(commodity.getPrice())+"元");
             tvType.setText(commodity.getCategory());
             byte[] picture = commodity.getPicture();
-            //从字节数组中解码生成不可变的位图
+            //從位元組數組中解碼生成不可變的位圖
             //public static Bitmap decodeByteArray(byte[] data, int offset, int length)
             Bitmap img = BitmapFactory.decodeByteArray(picture,0,picture.length);
             ivCommodity.setImageBitmap(img);
