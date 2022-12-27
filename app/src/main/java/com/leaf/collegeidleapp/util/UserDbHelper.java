@@ -11,13 +11,13 @@ import com.leaf.collegeidleapp.bean.User;
 import java.util.LinkedList;
 
 /**
- * 用户数据库连接类
+ * 用戶數據庫連接類
  */
 public class UserDbHelper extends SQLiteOpenHelper {
 
-    //定义数据库表名
+    //定義數據庫表名
     public static final String DB_NAME = "tb_user";
-    /** 定义创建用户信息表 **/
+    /** 定義創建用戶信息表 **/
     private static final String CREATE_USER_DB = "create table tb_user (" +
             "id integer primary key autoincrement," +
             "uuid text," +
@@ -25,12 +25,12 @@ public class UserDbHelper extends SQLiteOpenHelper {
             "password text )";
 
 
-    // 构造方法
+    // 構造方法
     public UserDbHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 
-    // 创建数据表
+    // 創建數據表
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_USER_DB);
@@ -42,7 +42,7 @@ public class UserDbHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * 注册时添加用户信息
+     * 註冊時添加用戶信息
      */
     public void addUser(User user) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -55,7 +55,7 @@ public class UserDbHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * 登陆时查询用户信息
+     * 登陸時查詢用戶信息
      */
     public LinkedList<User> readUsers() {
         LinkedList<User> users = new LinkedList<>();
@@ -78,7 +78,7 @@ public class UserDbHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * 修改密码功能
+     * 修改密碼功能
      */
     public boolean updateUser(String username,String password) {
         SQLiteDatabase db = this.getReadableDatabase();
