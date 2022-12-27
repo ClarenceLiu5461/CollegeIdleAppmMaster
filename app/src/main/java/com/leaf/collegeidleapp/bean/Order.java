@@ -1,18 +1,18 @@
 package com.leaf.collegeidleapp.bean;
 
 /*
- * 订单类
+ * 訂單類
  * */
 public class Order {
 
     private Integer id;
     // 物品主人id
     private String userId;
-    //商品图片,以二进制字节存储
+    //商品圖片,以二進制位元組存儲
     private byte[] picture;
     private String title;
     private Float price;
-    // 买方id
+    // 買方id
     private String buyId;
 
     private String description;
