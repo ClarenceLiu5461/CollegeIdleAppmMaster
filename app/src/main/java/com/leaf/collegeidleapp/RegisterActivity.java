@@ -12,7 +12,7 @@ import com.leaf.collegeidleapp.bean.User;
 import com.leaf.collegeidleapp.util.UserDbHelper;
 
 /**
- * 註冊介面Activity類
+ * 註冊介面Activity類.
  */
 public class RegisterActivity extends AppCompatActivity {
 
