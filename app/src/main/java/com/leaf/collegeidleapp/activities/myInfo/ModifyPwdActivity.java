@@ -15,7 +15,7 @@ import com.leaf.collegeidleapp.util.UserDbHelper;
 import java.util.LinkedList;
 
 /**
- * 修改密码活动类
+ * 修改密碼活動類
  */
 public class ModifyPwdActivity extends AppCompatActivity {
 
@@ -43,25 +43,25 @@ public class ModifyPwdActivity extends AppCompatActivity {
         btnModify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //首先保证输入合法
+                //首先保證輸入合法
                 if(CheckInput()) {
                     String stuNumber = tvStuNumber.getText().toString();
                     UserDbHelper dbHelper = new UserDbHelper(getApplicationContext(),UserDbHelper.DB_NAME,null,1);
                     LinkedList<User> users = dbHelper.readUsers();
                     for(User user : users) {
-                        //首先找到用户名
+                        //首先找到用戶名
                         if(user.getUsername().equals(stuNumber)) {
                             if(!etOriginPwd.getText().toString().equals(user.getPassword())) {
-                                //提示初始密码输入错误
-                                Toast.makeText(getApplicationContext(),"初始密码输入错误!",Toast.LENGTH_SHORT).show();
+                                //提示初始密碼輸入錯誤
+                                Toast.makeText(getApplicationContext(),"初始密碼輸入錯誤!",Toast.LENGTH_SHORT).show();
                             }else {
-                                //执行修改密码操作
+                                //執行修改密碼操作
                                 user.setPassword(etNewPwd.getText().toString());
                                 boolean flag = dbHelper.updateUser(tvStuNumber.getText().toString(),etNewPwd.getText().toString());
                                 if(flag) {
-                                    Toast.makeText(getApplicationContext(),"修改密码成功!",Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(),"修改密碼成功!",Toast.LENGTH_SHORT).show();
                                 }else {
-                                    Toast.makeText(getApplicationContext(),"修改密码失败!",Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(),"修改密碼失敗!",Toast.LENGTH_SHORT).show();
                                 }
                                 finish();
                             }
@@ -72,25 +72,25 @@ public class ModifyPwdActivity extends AppCompatActivity {
         });
     }
 
-    //判断输入的合法性
+    //判斷輸入的合法性
     public boolean CheckInput() {
         String OriginalPwd = etOriginPwd.getText().toString();
         String NewPwd = etNewPwd.getText().toString();
         String NewConfirmPwd = etConfirmPwd.getText().toString();
         if(OriginalPwd.trim().equals("")) {
-            Toast.makeText(this,"原始密码不能为空!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"原始密碼不能為空!",Toast.LENGTH_SHORT).show();
             return false;
         }
         if(NewPwd.trim().equals("")) {
-            Toast.makeText(this,"新密码不能为空!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"新密碼不能為空!",Toast.LENGTH_SHORT).show();
             return false;
         }
         if(NewConfirmPwd.trim().equals("")) {
-            Toast.makeText(this,"确认新密码不能为空!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"確認新密碼不能為空!",Toast.LENGTH_SHORT).show();
             return false;
         }
         if(!NewPwd.trim().equals(NewConfirmPwd.trim())) {
-            Toast.makeText(this,"两次密码输入不一致!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"兩次密碼輸入不一致!",Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
