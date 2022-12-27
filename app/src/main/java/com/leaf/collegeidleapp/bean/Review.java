@@ -1,14 +1,14 @@
 package com.leaf.collegeidleapp.bean;
 
 /**
- * 评论实体类
+ * 評論實體類
  */
 public class Review {
 
-    private String stuId;//用户账号
-    private String currentTime;//当前时间
-    private String content;//评论内容
-    private Integer position;//商品项编号
+    private String stuId;//用戶賬號
+    private String currentTime;//當前時間
+    private String content;//評論內容
+    private Integer position;//商品項編號
 
     public String getStuId() {
         return stuId;
