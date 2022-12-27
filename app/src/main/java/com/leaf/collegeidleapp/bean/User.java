@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.UUID;
 
 /**
- * 用户实体类
+ * 用戶實體類
  */
 public class User implements Serializable {
 
