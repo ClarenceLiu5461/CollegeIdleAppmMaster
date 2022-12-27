@@ -11,13 +11,13 @@ import com.leaf.collegeidleapp.bean.Review;
 import java.util.LinkedList;
 
 /**
- * 评论/留言数据库连接类
+ * 評論/留言數據庫連接類
  */
 public class ReviewDbHelper extends SQLiteOpenHelper {
 
-    //定义数据库表名
+    //定義數據庫表名
     public static final String DB_NAME = "tb_review";
-    /** 创建评论信息表 **/
+    /** 創建評論信息表 **/
     private static final String CREATE_REVIEW_DB = "create table tb_review (" +
             "id integer primary key autoincrement," +
             "stuId text," +
@@ -40,7 +40,7 @@ public class ReviewDbHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * 添加评论
+     * 添加評論
      */
     public void addReview(Review review) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -54,7 +54,7 @@ public class ReviewDbHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * 根据商品项编号读取相应的评论信息
+     * 根據商品項編號讀取相應的評論信息
      */
     public LinkedList<Review> readReviews(int  position) {
         LinkedList<Review> reviews = new LinkedList<>();
