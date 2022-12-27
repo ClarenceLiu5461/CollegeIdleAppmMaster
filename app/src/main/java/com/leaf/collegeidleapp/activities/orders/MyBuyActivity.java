@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 已买到的订单信息
+ * 已買到的訂單信息
  */
 public class MyBuyActivity extends AppCompatActivity {
 
@@ -46,9 +46,9 @@ public class MyBuyActivity extends AppCompatActivity {
                 finish();
             }
         });
-        //设置显示 ：购买记录
+        //設置顯示 ：購買記錄
         TextView textView = findViewById(R.id.tv_my_order);
-        textView.setText("购买记录");
+        textView.setText("購買記錄");
 
         tvStuId = findViewById(R.id.tv_stuId);
         tvStuId.setText(this.getIntent().getStringExtra("Uid"));
@@ -60,30 +60,30 @@ public class MyBuyActivity extends AppCompatActivity {
         adapter = new MyOrderAdapter(getApplicationContext());
         adapter.setData(myOrders);
         lvMyOrder.setAdapter(adapter);
-        //设置长按删除事件
+        //設置長按刪除事件
         lvMyOrder.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(MyBuyActivity.this);
-                builder.setTitle("提示:").setMessage("确定删除此收藏商品吗?").setIcon(R.drawable.icon_user).setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                builder.setTitle("提示:").setMessage("確定刪除此收藏商品嗎?").setIcon(R.drawable.icon_user).setNegativeButton("取消", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
                     }
-                }).setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                }).setPositiveButton("確定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
                         Order order = (Order) adapter.getItem(position);
-                        //删除收藏商品项
+                        //刪除收藏商品項
                         dbHelper.deleteMyOrder(order.getTitle(),order.getDescription(),order.getPrice());
-                        Toast.makeText(MyBuyActivity.this,"删除成功!",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MyBuyActivity.this,"刪除成功!",Toast.LENGTH_SHORT).show();
                     }
                 }).show();
                 return false;
             }
         });
-        //页面刷新
+        //頁面刷新
         TextView tvRefresh = findViewById(R.id.tv_refresh);
         tvRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
