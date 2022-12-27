@@ -15,7 +15,7 @@ import com.leaf.collegeidleapp.util.StudentDbHelper;
 import java.util.LinkedList;
 
 /**
- * 修改个人信息Activity类
+ * 修改個人信息Activity類
  */
 public class ModifyInfoActivity extends AppCompatActivity {
 
@@ -26,14 +26,14 @@ public class ModifyInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modify_info);
         Button btnBack = findViewById(R.id.btn_back);
-        //返回按钮点击事件
+        //返回按鈕點擊事件
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
-        //利用bundle传递学号
+        //利用bundle傳遞學號
         final TextView tvStuNumber = findViewById(R.id.tv_stu_number);
         tvStuNumber.setText(this.getIntent().getStringExtra("stu_number2"));
         etStuName = findViewById(R.id.et_stu_name);
@@ -42,7 +42,7 @@ public class ModifyInfoActivity extends AppCompatActivity {
         etAddress = findViewById(R.id.et_stu_address);
         StudentDbHelper dbHelper = new StudentDbHelper(getApplicationContext(),StudentDbHelper.DB_NAME,null,1);
         LinkedList<Student> students = dbHelper.readStudents(tvStuNumber.getText().toString());
-        //如果查找到的学生信息不为空
+        //如果查找到的學生信息不為空
         if(students != null) {
             for(Student student : students) {
                 etStuName.setText(student.getStuName());
@@ -56,7 +56,7 @@ public class ModifyInfoActivity extends AppCompatActivity {
         btnSaveInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //先判断输入不为空
+                //先判斷輸入不為空
                 if(CheckInput()) {
                     StudentDbHelper dbHelper = new StudentDbHelper(getApplicationContext(),StudentDbHelper.DB_NAME,null,1);
                     Student student = new Student();
@@ -66,34 +66,34 @@ public class ModifyInfoActivity extends AppCompatActivity {
                     student.setStuPhone(etPhone.getText().toString());
                     student.setStuAddress(etAddress.getText().toString());
                     dbHelper.saveStudent(student);
-                    Toast.makeText(getApplicationContext(),"用户信息保存成功!",Toast.LENGTH_SHORT).show();
-                    //销毁当前界面
+                    Toast.makeText(getApplicationContext(),"用戶信息保存成功!",Toast.LENGTH_SHORT).show();
+                    //銷毀當前界面
                     finish();
                 }
             }
         });
     }
 
-    //检查输入是否为空
+    //檢查輸入是否為空
     public boolean CheckInput() {
         String StuName = etStuName.getText().toString();
         String StuMajor = etMajor.getText().toString();
         String StuPhone = etPhone.getText().toString();
         String StuAddress = etAddress.getText().toString();
         if(StuName.trim().equals("")) {
-            Toast.makeText(this,"姓名不能为空!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"姓名不能為空!",Toast.LENGTH_SHORT).show();
             return false;
         }
         if(StuMajor.trim().equals("")) {
-            Toast.makeText(this,"专业不能为空!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"專業不能為空!",Toast.LENGTH_SHORT).show();
             return false;
         }
         if(StuPhone.trim().equals("")) {
-            Toast.makeText(this,"联系方式不能为空!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"聯系方式不能為空!",Toast.LENGTH_SHORT).show();
             return false;
         }
         if(StuAddress.trim().equals("")) {
-            Toast.makeText(this,"地址不能为空!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"地址不能為空!",Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
