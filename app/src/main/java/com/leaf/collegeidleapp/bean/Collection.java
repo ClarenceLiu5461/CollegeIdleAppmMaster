@@ -1,22 +1,21 @@
 package com.leaf.collegeidleapp.bean;
 
-
 /**
- * 我的收藏实体类
+ * 我的收藏實體類
  */
 public class Collection {
 
-    //学生学号
+    //學生學號
     private String StuId;
-    //商品图片
+    //商品圖片
     private byte[] picture;
-    //商品标题
+    //商品標題
     private String title;
     //商品描述
     private String description;
-    //商品价格
+    //商品價格
     private float price;
-    //联系方式
+    //聯系方式
     private String phone;
 
     public String getStuId() {
