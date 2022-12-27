@@ -19,7 +19,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * 所有物品的适配器Adapter类
+ * 所有物品的適配器Adapter類
  */
 public class MyCommodityAdapter extends BaseAdapter {
 
@@ -71,7 +71,7 @@ public class MyCommodityAdapter extends BaseAdapter {
         return convertView;
     }
 
-    //定义静态类,包含每一个item的所有元素
+    //定義靜態類,包含每一個item的所有元素
     static class ViewHolder {
         ImageView ivCommodity;
         TextView tvTitle,tvType,tvDescription,tvPrice;
