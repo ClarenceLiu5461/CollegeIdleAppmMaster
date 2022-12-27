@@ -24,13 +24,13 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * 不同类型商品信息的活动类
+ * 不同類型商品信息的活動類
  */
 public class CommodityTypeActivity extends AppCompatActivity {
 
     TextView tvCommodityType;
     ListView lvCommodityType;
-    ListView lvAllCommodity;//按照不同类别列出商品（根据status来）
+    ListView lvAllCommodity;//按照不同類別列出商品（根據status來）
     List<Commodity> commodities = new LinkedList<>();
 
     CommodityDbHelper dbHelper;
@@ -44,15 +44,15 @@ public class CommodityTypeActivity extends AppCompatActivity {
         final Bundle bundle = this.getIntent().getExtras();
         final String uid = bundle.getString("Uid");
 
-        //final String uid =  this.getIntent().getIntExtra("Uid",0)+"";//获取用户id，用来进行
-Log.d("CommodityT测试Uid", uid);
+        //final String uid =  this.getIntent().getIntExtra("Uid",0)+"";//獲取用戶id，用來進行
+Log.d("CommodityT測試Uid", uid);
 
-//根据不同的状态显示不同的界面
+//根據不同的狀態顯示不同的界面
         int status = this.getIntent().getIntExtra("status",0);
         lvAllCommodity = findViewById(R.id.list_commodity);
 
 
-//为每一个item设置点击事件
+//為每一個item設置點擊事件
         lvAllCommodity.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -88,50 +88,50 @@ Log.d("CommodityT测试Uid", uid);
         adapter = new AllCommodityAdapter(getApplicationContext());
 
         if(status == 1) {
-            tvCommodityType.setText("学习用品");
+            tvCommodityType.setText("學習用品");
         }else if(status == 2) {
-            tvCommodityType.setText("电子用品");
+            tvCommodityType.setText("電子用品");
         }else if(status == 3) {
             tvCommodityType.setText("生活用品");
         }else if(status == 4) {
-            tvCommodityType.setText("体育用品");
+            tvCommodityType.setText("體育用品");
         }
-        //根据不同类别显示不同的商品信息
+        //根據不同類別顯示不同的商品信息
         commodities = dbHelper.readCommodityType(tvCommodityType.getText().toString());
         adapter.setData(commodities);
         lvCommodityType.setAdapter(adapter);
-        // 长按购买事件
+        // 長按購買事件
         final ListView  lvAllCommodity = findViewById(R.id.list_commodity);
         lvAllCommodity.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(CommodityTypeActivity.this);
-                builder.setTitle("提示:").setMessage("确定购买此商品吗?").setIcon(R.drawable.icon_user).setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                builder.setTitle("提示:").setMessage("確定購買此商品嗎?").setIcon(R.drawable.icon_user).setNegativeButton("取消", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
                     }
-                }).setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                }).setPositiveButton("確定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
                         Commodity commodity = (Commodity) adapter.getItem(position);
-                        //添加商品到订单表（order）
+                        //添加商品到訂單表（order）
                         MyOrderDbHelper myOrderDbHelper = new MyOrderDbHelper(getApplicationContext(), MyOrderDbHelper.DB_NAME, null, 1);
                         Order order = new Order();
-                        order.setBuyId(String.valueOf(uid));//buyid是购买方的id，stuNum是当前登录的学生学号
+                        order.setBuyId(String.valueOf(uid));//buyid是購買方的id，stuNum是當前登錄的學生學號
 
-                        Log.d("CommondityT测试Uid", String.valueOf(uid));
+                        Log.d("CommondityT測試Uid", String.valueOf(uid));
                         order.setDescription(commodity.getDescription());
                         order.setPhone(commodity.getPhone());
                         order.setPicture(commodity.getPicture());
                         order.setPrice(commodity.getPrice());
                         order.setTitle(commodity.getTitle());
-                        order.setUserId(commodity.getStuId());//设置物品主人id
+                        order.setUserId(commodity.getStuId());//設置物品主人id
                         myOrderDbHelper.addMyOrder(order);
-                        //删除商品
+                        //刪除商品
                         dbHelper.deleteMyCommodity(commodity.getTitle(),commodity.getDescription(),commodity.getPrice());
-                        Toast.makeText(CommodityTypeActivity.this,"购买成功!",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CommodityTypeActivity.this,"購買成功!",Toast.LENGTH_SHORT).show();
                     }
                 }).show();
                 return true;
