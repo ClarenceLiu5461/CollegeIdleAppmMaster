@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
- * 评论的适配器
+ * 評論的適配器
  */
 public class ReviewAdapter extends BaseAdapter {
 
@@ -51,9 +51,9 @@ public class ReviewAdapter extends BaseAdapter {
     }
 
     /**
-     * 获取视图
+     * 獲取視圖
      * @param position 位置
-     * @param convertView 当前的视图
+     * @param convertView 當前的視圖
      * return convertView
      */
     @Override
@@ -73,7 +73,7 @@ public class ReviewAdapter extends BaseAdapter {
     }
 
     /**
-     * 静态ViewHolder类
+     * 靜態ViewHolder類
      */
     static class ViewHolder {
 
