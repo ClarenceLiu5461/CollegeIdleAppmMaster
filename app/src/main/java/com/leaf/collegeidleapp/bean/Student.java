@@ -1,19 +1,19 @@
 package com.leaf.collegeidleapp.bean;
 
 /**
- * 学生实体类
+ * 學生實體類
  */
 public class Student {
 
-    //学号
+    //學號
     private String stuNumber;
     //姓名
     private String stuName;
-    //专业
+    //專業
     private String stuMajor;
-    //联系方式
+    //聯系方式
     private String stuPhone;
-    //QQ号
+    //QQ號
     private String stuQq;
     //地址
     private String stuAddress;
