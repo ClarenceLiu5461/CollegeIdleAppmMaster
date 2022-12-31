@@ -2,8 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
-    android:background="@color/colorWhite">
+    android:padding="10dp">
     <TextView
         android:id="@+id/tv_title"
         android:text="用戶登入"
@@ -70,7 +69,7 @@
         android:layout_height="wrap_content"
         android:text="註冊帳號"
         android:textSize="20sp"
-        android:textColor="@color/colorBrown"
+        android:textColor="@color/colorBlack"
         android:layout_below="@+id/et_password"
         android:layout_marginTop="40dp"
         android:layout_marginStart="280dp"/>

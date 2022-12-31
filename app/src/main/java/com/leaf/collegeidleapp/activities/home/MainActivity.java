@@ -78,7 +78,7 @@ Log.d("MainActivity測試用戶id",stuNum);
                 if (bundle != null) {
                     //獲取學生學號
                     bundle.putString("user_id", stuNum);
-                    bundle.putString("uid",bundle.getString("username"));//把uid传到下一个控件
+                    bundle.putString("uid",bundle.getString("username"));//把uid傳到下一個控制鍵
                     intent.putExtras(bundle);
                 }
                 startActivity(intent);

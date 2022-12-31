@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorBlueLight">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/tv_my_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorGreenLight"
+        android:background="@color/colorWhite"
         android:gravity="center_horizontal"
         android:text="個人資料"
-        android:textColor="@color/colorGreen"
-        android:textSize="40sp"
-        android:textStyle="italic" />
+        android:textColor="@color/colorBlack"
+        android:textSize="40sp"/>
     <TextView
         android:id="@+id/tv_refresh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="刷新"
         android:textSize="22sp"
-        android:textColor="@color/colorPurple"
+        android:textColor="@color/colorBlack"
         android:layout_marginStart="335dp"
         android:layout_marginTop="12dp"/>
 
@@ -135,6 +133,7 @@
         android:layout_below="@+id/tv_stu_address"
         android:text="返回"
         android:textSize="25sp"
+        android:textColor="@color/colorWhite"
         android:layout_marginTop="40dp"
         android:background="@drawable/btn_cancel"
         android:layout_marginStart="210dp"

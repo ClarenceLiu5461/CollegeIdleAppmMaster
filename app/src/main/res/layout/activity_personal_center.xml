@@ -7,12 +7,10 @@
         android:id="@+id/tv_personal_center1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorOrange"
         android:gravity="center_horizontal"
         android:text="個人中心"
         android:textColor="@color/colorBlack"
-        android:textSize="40sp"
-        android:textStyle="italic" />
+        android:textSize="40sp"/>
     <ImageView
         android:id="@+id/iv_user_photo"
         android:layout_width="80dp"

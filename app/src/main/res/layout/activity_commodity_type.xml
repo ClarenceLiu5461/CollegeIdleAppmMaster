@@ -8,7 +8,7 @@
         android:layout_height="wrap_content"
         android:text="刷新"
         android:textSize="24sp"
-        android:textColor="@color/colorPurple"
+        android:textColor="@color/colorBlack"
         android:layout_marginTop="18dp"
         android:layout_marginStart="30dp"/>
     <TextView
@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:text="返回"
         android:textSize="24sp"
-        android:textColor="@color/colorPurple"
+        android:textColor="@color/colorBlack"
         android:layout_marginTop="18dp"
         android:layout_marginStart="330dp"/>
     <TextView
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:text="生活用品"
         android:textSize="40sp"
-        android:textColor="@color/colorGreen"
+        android:textColor="@color/colorBlack"
         android:gravity="center_horizontal"
         android:layout_marginTop="5dp"/>
     <View

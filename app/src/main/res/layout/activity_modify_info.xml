@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorBlueLight">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/tv_my_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorGreenLight"
+        android:background="@color/colorWhite"
         android:gravity="center_horizontal"
         android:text="個人資料"
-        android:textColor="@color/colorGreen"
-        android:textSize="40sp"
-        android:textStyle="italic" />
+        android:textColor="@color/colorBlack"
+        android:textSize="40sp"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -124,8 +122,9 @@
         android:layout_below="@+id/et_stu_address"
         android:text="保存"
         android:textSize="25sp"
+        android:textColor="@color/colorBlack"
         android:layout_marginTop="40dp"
-        android:background="@drawable/btn_login"
+        android:background="@drawable/btn_publish"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="10dp"/>
     <Button
@@ -135,6 +134,7 @@
         android:layout_below="@+id/et_stu_address"
         android:text="返回"
         android:textSize="25sp"
+        android:textColor="@color/colorWhite"
         android:layout_marginTop="40dp"
         android:background="@drawable/btn_cancel"
         android:layout_marginStart="210dp"

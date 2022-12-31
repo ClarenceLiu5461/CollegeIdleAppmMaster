@@ -7,12 +7,11 @@
         android:id="@+id/tv_my_commodity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorBlue"
+        android:background="@color/colorWhite"
         android:gravity="center_horizontal"
         android:text="我的發佈"
-        android:textColor="@color/colorBrown"
-        android:textSize="40sp"
-        android:textStyle="italic" />
+        android:textColor="@color/colorBlack"
+        android:textSize="40sp"/>
     <TextView
         android:id="@+id/tv_stu_id"
         android:layout_width="match_parent"
@@ -29,7 +28,7 @@
         android:layout_height="wrap_content"
         android:text="刷新"
         android:textSize="22sp"
-        android:textColor="@color/colorRed"
+        android:textColor="@color/colorBlack"
         android:layout_marginStart="30dp"
         android:layout_marginTop="15dp"/>
     <TextView
@@ -38,7 +37,7 @@
         android:layout_height="wrap_content"
         android:text="返回"
         android:textSize="22sp"
-        android:textColor="@color/colorRed"
+        android:textColor="@color/colorBlack"
         android:layout_marginStart="330dp"
         android:layout_marginTop="15dp"/>
     <ListView
