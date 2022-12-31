@@ -32,7 +32,7 @@
         android:drawablePadding="8dp"
         android:background="@drawable/bg_username"
         android:textColor="@color/colorBlack"
-        android:inputType="number"
+        android:inputType="text"
         android:maxLines="1"
         android:layout_below="@+id/iv_logo"
         android:paddingLeft="10dp"
