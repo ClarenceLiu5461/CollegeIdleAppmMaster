@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">高科大二手交易</string>
+    <string name="menu_home" />
+    <string name="menu_gallery" />
+    <string name="menu_slideshow" />
+    <string name="action_settings" />
 </resources>

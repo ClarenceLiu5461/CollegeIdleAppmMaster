@@ -166,12 +166,12 @@
         android:id="@+id/dingdan_buy_tv"
         android:layout_width="70dp"
         android:layout_height="20dp"
-        android:text="买到订单"
-        android:textSize="15sp"
-        android:textStyle="bold"
         android:layout_above="@+id/view4"
         android:layout_marginStart="150dp"
-        android:layout_marginBottom="5dp"/>
+        android:layout_marginBottom="5dp"
+        android:text="購買紀錄"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <View
         android:id="@+id/view6"
@@ -189,16 +189,17 @@
         android:src="@drawable/shopping"
         android:layout_marginStart="240dp"
         android:layout_marginTop="5dp"/>
+
     <TextView
         android:id="@+id/dingdan_tv"
         android:layout_width="70dp"
         android:layout_height="20dp"
-        android:text="售出订单"
-        android:textSize="15sp"
-        android:textStyle="bold"
         android:layout_above="@+id/view4"
         android:layout_marginStart="230dp"
-        android:layout_marginBottom="5dp"/>
+        android:layout_marginBottom="5dp"
+        android:text="我的售出"
+        android:textSize="15sp"
+        android:textStyle="bold" />
     <View
         android:id="@+id/view5"
         android:layout_width="2dp"
@@ -221,27 +222,28 @@
         android:id="@+id/tv_home_page"
         android:layout_width="35dp"
         android:layout_height="20dp"
-        android:text="首页"
+        android:text="首頁"
         android:textSize="15sp"
         android:textStyle="bold"
         android:layout_above="@+id/view4"
         android:layout_marginStart="25dp"
         android:layout_marginBottom="5dp"/>
+
     <TextView
         android:id="@+id/tv_add_product"
         android:layout_width="70dp"
         android:layout_height="20dp"
-        android:text="发布物品"
-        android:textStyle="bold"
-        android:textSize="15sp"
         android:layout_above="@+id/view4"
         android:layout_marginStart="75dp"
-        android:layout_marginBottom="5dp"/>
+        android:layout_marginBottom="5dp"
+        android:text="發布商品"
+        android:textSize="15sp"
+        android:textStyle="bold" />
     <TextView
         android:id="@+id/tv_personal_center"
         android:layout_width="70dp"
         android:layout_height="20dp"
-        android:text="个人中心"
+        android:text="個人中心"
         android:textSize="15sp"
         android:textStyle="bold"
         android:layout_above="@+id/view4"
@@ -252,4 +254,7 @@
         android:layout_height="2dp"
         android:background="@color/colorBlack"
         android:layout_alignParentBottom="true"/>
+
+
+
 </RelativeLayout>

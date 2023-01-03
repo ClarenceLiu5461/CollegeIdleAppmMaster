@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.leaf.collegeidleapp.activities.home.MainActivity"
+        android:label="@string/menu_home"
+        tools:layout="@layout/activity_main" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.leaf.collegeidleapp.activities.addProduct.AddCommodityActivity"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/activity_add_commodity" />
+
+    <fragment
+        android:id="@+id/nav_gigi"
+        android:name="com.leaf.collegeidleapp.activities.orders.MyOrderActivity"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/activity_my_order" />
+    <fragment
+        android:id="@+id/nav_gigi2"
+        android:name="com.leaf.collegeidleapp.activities.orders.MyOrderActivity"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/activity_my_order" />
+</navigation>
