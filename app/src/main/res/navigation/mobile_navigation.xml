@@ -20,11 +20,11 @@
     <fragment
         android:id="@+id/nav_gigi"
         android:name="com.leaf.collegeidleapp.activities.orders.MyOrderActivity"
-        android:label="@string/menu_slideshow"
+        android:label="@string/menu_gigi"
         tools:layout="@layout/activity_my_order" />
     <fragment
         android:id="@+id/nav_gigi2"
         android:name="com.leaf.collegeidleapp.activities.orders.MyOrderActivity"
-        android:label="@string/menu_slideshow"
+        android:label="@string/menu_gigi2"
         tools:layout="@layout/activity_my_order" />
 </navigation>

@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">高科大二手交易</string>
-    <string name="menu_home" />
-    <string name="menu_gallery" />
-    <string name="menu_slideshow" />
+    <string name="menu_home">首頁</string>
+    <string name="menu_gallery">發佈商品</string>
+    <string name="menu_gigi">購買紀錄</string>
+    <string name="menu_gigi2">我的售出</string>
     <string name="action_settings" />
+
 </resources>

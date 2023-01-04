@@ -2,6 +2,9 @@ package com.leaf.collegeidleapp.activities.home;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +15,11 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 
 import com.leaf.collegeidleapp.R;
 import com.leaf.collegeidleapp.activities.orders.MyBuyActivity;
