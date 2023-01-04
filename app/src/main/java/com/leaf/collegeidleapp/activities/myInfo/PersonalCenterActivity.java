@@ -2,6 +2,7 @@ package com.leaf.collegeidleapp.activities.myInfo;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -24,6 +25,13 @@ public class PersonalCenterActivity extends AppCompatActivity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_center);
+
+        //去除標題欄位
+        ActionBar actionBar = getSupportActionBar();
+        if(actionBar != null){
+            actionBar.hide();
+        }
+
         //取出登錄時的登錄名
         TvStuNumber = findViewById(R.id.tv_student_number);
         String StuNumber = this.getIntent().getStringExtra("username1");
