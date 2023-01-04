@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -54,6 +55,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         // 設置佈局
         setContentView(R.layout.activity_main);
+
+        //去除標題欄位
+        ActionBar actionBar = getSupportActionBar();
+        if(actionBar != null){
+            actionBar.hide();
+        }
+
         lvAllCommodity = findViewById(R.id.lv_all_commodity);
         dbHelper = new CommodityDbHelper(getApplicationContext(), CommodityDbHelper.DB_NAME, null, 1);
         adapter = new AllCommodityAdapter(getApplicationContext());
@@ -61,6 +69,10 @@ public class MainActivity extends AppCompatActivity {
         adapter.setData(allCommodities);
         // 設置Viewlist的適配器
         lvAllCommodity.setAdapter(adapter);
+
+        //NavigationDrawer
+
+
         // 抓取上個頁面的儲存對象
         final Bundle bundle = this.getIntent().getExtras();
         final String Uid = bundle.getString("username");
