@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
+
 
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/drawerLayout"
@@ -40,6 +42,8 @@
                 app:elevation="6dp"
                 app:pressedTranslationZ="12dp" />
 
+
+
         </android.support.design.widget.CoordinatorLayout>
 
         <!-- 選單 -->
@@ -52,6 +56,9 @@
 
     </android.support.v4.widget.DrawerLayout>
 
+
+
+
     <TextView
         android:id="@+id/tv_title"
         android:text="首頁"
@@ -60,14 +67,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:layout_marginBottom="4dp"/>
-
+        android:layout_marginBottom="4dp"
+        android:background="@color/colorWhite"/>
     <ImageButton
         android:id="@+id/navidrawer"
-        android:layout_width="53dp"
-        android:layout_height="45dp"
-        app:srcCompat="@drawable/menu_48px"/>
-
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/menu_48px" />
     <TextView
         android:id="@+id/tv_refresh"
         android:layout_width="wrap_content"
@@ -186,7 +192,7 @@
         android:layout_height="60dp"
         android:layout_above="@+id/view4"
         android:layout_marginStart="70dp"
-    android:background="#FFFFFF"/>
+        android:background="#FFFFFF"/>
 
     <ImageButton
         android:id="@+id/ib_add_product"
@@ -314,5 +320,3 @@
 
 
 </RelativeLayout>
-
-
