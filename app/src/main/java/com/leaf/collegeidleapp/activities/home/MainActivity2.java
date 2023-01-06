@@ -2,13 +2,10 @@ package com.leaf.collegeidleapp.activities.home;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
-import android.support.v4.widget.DrawerLayout;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -17,18 +14,13 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
 import com.leaf.collegeidleapp.R;
+import com.leaf.collegeidleapp.activities.addProduct.AddCommodityActivity;
+import com.leaf.collegeidleapp.activities.myInfo.PersonalCenterActivity;
 import com.leaf.collegeidleapp.activities.orders.MyBuyActivity;
 import com.leaf.collegeidleapp.activities.orders.MyOrderActivity;
-import com.leaf.collegeidleapp.activities.myInfo.PersonalCenterActivity;
 import com.leaf.collegeidleapp.activities.orders.ReviewCommodityActivity;
 import com.leaf.collegeidleapp.adapter.AllCommodityAdapter;
-import com.leaf.collegeidleapp.activities.addProduct.AddCommodityActivity;
 import com.leaf.collegeidleapp.bean.Commodity;
 import com.leaf.collegeidleapp.bean.Order;
 import com.leaf.collegeidleapp.util.CommodityDbHelper;
@@ -41,7 +33,7 @@ import java.util.List;
  * 主界面活动类
  *
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity2 extends AppCompatActivity {
 
     ListView lvAllCommodity;
     List<Commodity> allCommodities = new ArrayList<>();
@@ -54,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // 設置佈局
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
 
         //去除標題欄位
         ActionBar actionBar = getSupportActionBar();
@@ -94,7 +86,7 @@ Log.d("MainActivity測試用戶id",stuNum);
         IbAddProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, AddCommodityActivity.class);
+                Intent intent = new Intent(MainActivity2.this, AddCommodityActivity.class);
                 if (bundle != null) {
                     //獲取學生學號
                     bundle.putString("user_id", stuNum);
@@ -110,7 +102,7 @@ Log.d("MainActivity測試用戶id",stuNum);
         IbPersonalCenter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, PersonalCenterActivity.class);
+                Intent intent = new Intent(MainActivity2.this, PersonalCenterActivity.class);
                 if (bundle != null) {
                     //抓取學生學號
                     bundle.putString("username1", stuNum);
@@ -174,7 +166,7 @@ Log.d("MainActivity測試用戶id",stuNum);
                 bundle1.putFloat("price",commodity.getPrice());
                 bundle1.putString("phone",commodity.getPhone());
                 bundle1.putString("stuId",stuNum);
-                Intent intent = new Intent(MainActivity.this, ReviewCommodityActivity.class);
+                Intent intent = new Intent(MainActivity2.this, ReviewCommodityActivity.class);
                 intent.putExtras(bundle1);
                 startActivity(intent);
             }
@@ -184,7 +176,7 @@ Log.d("MainActivity測試用戶id",stuNum);
         lvAllCommodity.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity2.this);
                 builder.setTitle("提示:").setMessage("確定購買此商品嗎?").setIcon(R.drawable.icon_user).setNegativeButton("取消", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -211,7 +203,7 @@ Log.d("MainActivity測試用戶id",stuNum);
                         myOrderDbHelper.addMyOrder(order);
                         //刪除商品
                         dbHelper.deleteMyCommodity(commodity.getTitle(),commodity.getDescription(),commodity.getPrice());
-                        Toast.makeText(MainActivity.this,"購買成功",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity2.this,"購買成功",Toast.LENGTH_SHORT).show();
                     }
                 }).show();
                 return true;
@@ -220,30 +212,18 @@ Log.d("MainActivity測試用戶id",stuNum);
 
 
         //點擊不同的類別,顯示不同的商品資訊
-        NaviDrawer = findViewById(R.id.navidrawer);
         ibLearning = findViewById(R.id.ib_learning_use);
         ibElectronic = findViewById(R.id.ib_electric_product);
         ibDaily = findViewById(R.id.ib_daily_use);
         ibSports = findViewById(R.id.ib_sports_good);
         final Bundle bundle2 = new Bundle();
         //study_goods
-        NaviDrawer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bundle2.putInt("status",5);
-                bundle2.putString("Uid",Uid);
-                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-                intent.putExtras(bundle2);
-                startActivity(intent);
-            }
-        });
-        //study_goods
         ibLearning.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 bundle2.putInt("status",1);
                 bundle2.putString("Uid",Uid);
-                Intent intent = new Intent(MainActivity.this, CommodityTypeActivity.class);
+                Intent intent = new Intent(MainActivity2.this, CommodityTypeActivity.class);
                 intent.putExtras(bundle2);
                 startActivity(intent);
             }
@@ -254,7 +234,7 @@ Log.d("MainActivity測試用戶id",stuNum);
             public void onClick(View v) {
                 bundle2.putInt("status",2);
                 bundle2.putString("Uid",Uid);
-                Intent intent = new Intent(MainActivity.this,CommodityTypeActivity.class);
+                Intent intent = new Intent(MainActivity2.this,CommodityTypeActivity.class);
                 intent.putExtras(bundle2);
                 startActivity(intent);
             }
@@ -268,7 +248,7 @@ Log.d("MainActivity測試用戶id",stuNum);
 
                 Log.d("這是生活用品:",Uid);
 
-                Intent intent = new Intent(MainActivity.this,CommodityTypeActivity.class);
+                Intent intent = new Intent(MainActivity2.this,CommodityTypeActivity.class);
                 intent.putExtras(bundle2);
                 startActivity(intent);
             }
@@ -279,7 +259,7 @@ Log.d("MainActivity測試用戶id",stuNum);
             public void onClick(View v) {
                 bundle2.putInt("status",4);
                 bundle2.putString("Uid",Uid);
-                Intent intent = new Intent(MainActivity.this,CommodityTypeActivity.class);
+                Intent intent = new Intent(MainActivity2.this,CommodityTypeActivity.class);
                 intent.putExtras(bundle2);
                 startActivity(intent);
             }

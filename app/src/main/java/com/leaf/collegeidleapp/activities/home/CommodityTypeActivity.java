@@ -95,6 +95,8 @@ Log.d("CommodityT測試Uid", uid);
             tvCommodityType.setText("生活用品");
         }else if(status == 4) {
             tvCommodityType.setText("體育用品");
+        }else if (status == 5){
+            tvCommodityType.setText("");
         }
         //根據不同類別顯示不同的商品信息
         commodities = dbHelper.readCommodityType(tvCommodityType.getText().toString());
