@@ -70,6 +70,9 @@
         android:id="@+id/navidrawer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#00FFFFFF"
         app:srcCompat="@drawable/menu_48px" />
 
     <ImageButton
@@ -77,6 +80,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#00FFFFFF"
         app:srcCompat="@drawable/search" />
 
     <ImageButton
@@ -84,7 +93,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="65dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="70dp"
+        android:background="#FFFFFFFF"
         app:srcCompat="@drawable/pin_drop" />
 
     <TextView
