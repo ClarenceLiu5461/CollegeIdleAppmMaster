@@ -112,20 +112,6 @@ public class MainActivity2 extends AppCompatActivity{
             }
         });
 
-        //跳轉到個人中心介面
-        ImageButton IbPersonalCenter = findViewById(R.id.ib_personal_center);
-        IbPersonalCenter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity2.this, PersonalCenterActivity.class);
-                if (bundle != null) {
-                    //抓取學生學號
-                    bundle.putString("username1", stuNum);
-                    intent.putExtras(bundle);
-                }
-                startActivity(intent);
-            }
-        });
         //跳轉到售出訂單介面
         pageD4 = findViewById(R.id.page4);
         pageD4.setOnClickListener(new View.OnClickListener() {

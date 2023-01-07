@@ -90,68 +90,6 @@ public class MainActivity extends AppCompatActivity {
         final String stuNum = tvStuNumber.getText().toString().substring(2, tvStuNumber.getText().length() - 4);
 Log.d("MainActivity測試用戶id",stuNum);
 
-        //跳轉到添加商品介面
-        ImageButton IbAddProduct = findViewById(R.id.ib_add_product);
-        IbAddProduct.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, AddCommodityActivity.class);
-                if (bundle != null) {
-                    //獲取學生學號
-                    bundle.putString("user_id", stuNum);
-                    bundle.putString("uid",bundle.getString("username"));//把uid傳到下一個控制鍵
-                    intent.putExtras(bundle);
-                }
-                startActivity(intent);
-            }
-        });
-
-        //跳轉到個人中心介面
-        ImageButton IbPersonalCenter = findViewById(R.id.ib_personal_center);
-        IbPersonalCenter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, PersonalCenterActivity.class);
-                if (bundle != null) {
-                    //抓取學生學號
-                    bundle.putString("username1", stuNum);
-                    intent.putExtras(bundle);
-                }
-                startActivity(intent);
-            }
-        });
-        //跳轉到售出訂單介面
-        ImageButton ibDingdan = findViewById(R.id.dingdan);
-        ibDingdan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MyOrderActivity.class);
-                if (bundle != null) {
-                    //抓取學生學號
-                    bundle.putString("Uid", stuNum);
-                    intent.putExtras(bundle);
-                }
-                startActivity(intent);
-            }
-        });
-
-        //跳轉到我買到的訂單頁面
-        ImageButton ibBuy = findViewById(R.id.dingdan_buy_ib);
-        ibBuy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MyBuyActivity.class);
-                if (bundle != null) {
-                    //抓取學生學號
-                    bundle.putString("Uid", stuNum);
-                    intent.putExtras(bundle);
-                }
-                startActivity(intent);
-            }
-        });
-
-
-
         //刷新界面
         TextView tvRefresh = findViewById(R.id.tv_refresh);
         tvRefresh.setOnClickListener(new View.OnClickListener() {

@@ -25,15 +25,7 @@
             android:paddingRight="10dp">
 
 
-            <android.support.design.widget.FloatingActionButton
-                android:id="@+id/fabbutton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|end"
-                android:layout_margin="16dp"
-                android:src="@drawable/ic_launcher_background"
-                app:elevation="6dp"
-                app:pressedTranslationZ="12dp" />
+
 
 
         </android.support.design.widget.CoordinatorLayout>
@@ -60,7 +52,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:layout_marginBottom="4dp"
-        android:background="@color/colorWhite"/>
+        android:background="#FFFFFFFF"/>
 
     <TextView
         android:id="@+id/tv_refresh"
@@ -183,152 +175,15 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/tv_electric_product"
         android:layout_marginTop="4dp"
-        android:layout_above="@+id/view2"/>
-
-    <View android:id="@+id/view1"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_above="@+id/view2"
-        android:background="#FFFFFF"
-        android:layout_marginTop="70dp"/>
-    <ImageButton
-        android:id="@+id/ib_home_page"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_above="@+id/tv_home_page"
-        android:src="@drawable/icon_home_page"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="5dp"/>
-    <View android:id="@+id/view2"
-        android:layout_width="2dp"
-        android:layout_height="60dp"
-        android:layout_above="@+id/view4"
-        android:layout_marginStart="70dp"
-        android:background="#FFFFFF"/>
-
-    <ImageButton
-        android:id="@+id/ib_add_product"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_above="@+id/tv_add_product"
-        android:layout_marginStart="90dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="0dp"
-        android:src="@drawable/release" />
-
-
-    <View
-        android:id="@+id/view3"
-        android:layout_width="2dp"
-        android:layout_height="60dp"
-        android:layout_above="@+id/view4"
-        android:layout_marginStart="140dp"
-        android:layout_marginBottom="-1dp"
-        android:background="#FFFFFF" />
-
-    <ImageButton
-        android:id="@+id/dingdan_buy_ib"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_above="@+id/tv_personal_center"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="0dp"
-        android:src="@drawable/buy" />
-
-    <TextView
-        android:id="@+id/dingdan_buy_tv"
-        android:layout_width="70dp"
-        android:layout_height="20dp"
-        android:layout_above="@+id/view4"
-        android:layout_marginStart="150dp"
-        android:layout_marginBottom="5dp"
-        android:text="購買紀錄"
-        android:textSize="15sp"
-        android:textStyle="bold" />
-
-    <View
-        android:id="@+id/view6"
-        android:layout_width="2dp"
-        android:layout_height="60dp"
-        android:layout_above="@+id/view4"
-        android:layout_marginStart="220dp"
-        android:layout_marginBottom="-1dp"
-        android:background="#FFFFFF" />
-    <ImageButton
-        android:id="@+id/dingdan"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_above="@+id/tv_personal_center"
-        android:src="@drawable/shopping"
-        android:layout_marginStart="240dp"
-        android:layout_marginTop="5dp"/>
-
-    <TextView
-        android:id="@+id/dingdan_tv"
-        android:layout_width="70dp"
-        android:layout_height="20dp"
-        android:layout_above="@+id/view4"
-        android:layout_marginStart="230dp"
-        android:layout_marginBottom="5dp"
-        android:text="我的售出"
-        android:textSize="15sp"
-        android:textStyle="bold" />
-    <View
-        android:id="@+id/view5"
-        android:layout_width="2dp"
-        android:layout_height="60dp"
-        android:layout_above="@+id/view4"
-        android:layout_marginStart="295dp"
-        android:layout_marginBottom="-1dp"
-        android:background="#FFFFFF" />
-
-
-    <ImageButton
-        android:id="@+id/ib_personal_center"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_above="@+id/tv_personal_center"
-        android:src="@drawable/icon_personal_center"
-        android:layout_marginStart="330dp"
-        android:layout_marginTop="5dp"/>
-    <TextView
-        android:id="@+id/tv_home_page"
-        android:layout_width="35dp"
-        android:layout_height="20dp"
-        android:text="首頁"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:layout_above="@+id/view4"
-        android:layout_marginStart="25dp"
-        android:layout_marginBottom="5dp"/>
-
-    <TextView
-        android:id="@+id/tv_add_product"
-        android:layout_width="70dp"
-        android:layout_height="20dp"
-        android:layout_above="@+id/view4"
-        android:layout_marginStart="75dp"
-        android:layout_marginBottom="5dp"
-        android:text="發布商品"
-        android:textSize="15sp"
-        android:textStyle="bold" />
-    <TextView
-        android:id="@+id/tv_personal_center"
-        android:layout_width="70dp"
-        android:layout_height="20dp"
-        android:text="個人中心"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:layout_above="@+id/view4"
-        android:layout_marginStart="320dp"
-        android:layout_marginBottom="5dp"/>
-    <View android:id="@+id/view4"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/colorBlack"
-        android:layout_alignParentBottom="true"/>
-
-
+        android:background="#FFFFFFFF"/>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="10dp"
+        android:src="@drawable/ic_launcher_background"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp" />
 
 </RelativeLayout>
