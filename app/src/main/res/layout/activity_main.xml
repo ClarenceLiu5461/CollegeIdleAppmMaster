@@ -176,12 +176,14 @@
         android:layout_below="@+id/tv_electric_product"
         android:layout_marginTop="4dp"
         android:background="#FFFFFFFF"/>
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fabbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_margin="10dp"
+        android:layout_marginLeft="330dp"
+        android:layout_marginTop="660dp"
         android:src="@drawable/ic_launcher_background"
         app:elevation="6dp"
         app:pressedTranslationZ="12dp" />
