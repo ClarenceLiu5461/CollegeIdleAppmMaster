@@ -66,12 +66,6 @@
         </android.support.design.widget.CoordinatorLayout>
 
         <!-- 選單 -->
-        <android.support.design.widget.NavigationView
-            android:id="@+id/navigation_view"
-            android:layout_width="240dp"
-            android:layout_gravity="start"
-            android:layout_height="match_parent"
-            app:menu="@menu/activity_main_drawer" />
 
     </android.support.v4.widget.DrawerLayout>
 
@@ -92,11 +86,33 @@
         android:id="@+id/tv_refresh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="刷新"
-        android:textSize="22sp"
-        android:textColor="@color/colorBlack"
+        android:layout_alignParentEnd="true"
         android:layout_marginStart="340dp"
-        android:layout_marginTop="12dp"/>
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="280dp"
+        android:text="刷新"
+        android:textColor="@color/colorBlack"
+        android:textSize="22sp" />
+    <ImageButton
+        android:id="@+id/navidrawer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/menu_48px" />
+
+    <ImageButton
+        android:id="@+id/searchbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        app:srcCompat="@drawable/search" />
+
+    <ImageButton
+        android:id="@+id/mapbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="65dp"
+        app:srcCompat="@drawable/pin_drop" />
     <TextView
         android:id="@+id/tv_student_number"
         android:layout_width="match_parent"
