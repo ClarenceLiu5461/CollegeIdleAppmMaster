@@ -18,7 +18,7 @@
         app:menu="@menu/activity_main_drawer">
 
         <Button
-            android:id="@+id/homepage"
+            android:id="@+id/page1"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_marginLeft="70dp"
@@ -29,32 +29,32 @@
             android:textSize="15dp" />
 
         <Button
-            android:id="@+id/addproduct"
+            android:id="@+id/page2"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_marginLeft="70dp"
-            android:layout_marginTop="235dp"
+            android:layout_marginTop="228dp"
             android:background="#00FFFFFF"
             android:text="發佈商品"
             android:textAlignment="textStart"
             android:textSize="15dp" />
 
         <Button
-            android:id="@+id/productbuy"
+            android:id="@+id/page3"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_marginLeft="70dp"
-            android:layout_marginTop="280dp"
+            android:layout_marginTop="278dp"
             android:background="#00FFFFFF"
             android:text="購買紀錄"
             android:textAlignment="textStart"
             android:textSize="15dp" />
         <Button
-            android:id="@+id/productsell"
+            android:id="@+id/page4"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_marginLeft="70dp"
-            android:layout_marginTop="335dp"
+            android:layout_marginTop="328dp"
             android:background="#00FFFFFF"
             android:text="我的售出"
             android:textSize="15dp"

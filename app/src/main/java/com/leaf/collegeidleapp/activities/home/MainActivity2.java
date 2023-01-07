@@ -43,7 +43,7 @@ public class MainActivity2 extends AppCompatActivity{
     ListView lvAllCommodity;
     List<Commodity> allCommodities = new ArrayList<>();
     ImageButton ibLearning,ibElectronic,ibDaily,ibSports;
-    Button addproduct,personalcenter,dindan,dindanbuy;
+    Button pageA1,pageB2,pageC3,pageD4;
 
     CommodityDbHelper dbHelper;
     AllCommodityAdapter adapter;
@@ -83,9 +83,25 @@ public class MainActivity2 extends AppCompatActivity{
         final String stuNum = tvStuNumber.getText().toString().substring(2, tvStuNumber.getText().length() - 4);
 Log.d("MainActivity測試用戶id",stuNum);
 
+        //跳轉到首頁
+        pageA1 = findViewById(R.id.page1);
+        pageA1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity2.this, MainActivity.class);
+                if (bundle != null) {
+                    //獲取學生學號
+                    bundle.putString("user_id", stuNum);
+                    bundle.putString("uid",bundle.getString("username"));//把uid傳到下一個控制鍵
+                    intent.putExtras(bundle);
+                }
+                startActivity(intent);
+            }
+        });
+
         //跳轉到添加商品介面
-        ImageButton AddProduct = findViewById(R.id.ib_add_product);
-        AddProduct.setOnClickListener(new View.OnClickListener() {
+        pageB2 = findViewById(R.id.page2);
+        pageB2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity2.this, AddCommodityActivity.class);
@@ -114,8 +130,8 @@ Log.d("MainActivity測試用戶id",stuNum);
             }
         });
         //跳轉到售出訂單介面
-        ImageButton ibDingdan = findViewById(R.id.dingdan);
-        ibDingdan.setOnClickListener(new View.OnClickListener() {
+        pageD4 = findViewById(R.id.page4);
+        pageD4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MyOrderActivity.class);
@@ -128,9 +144,9 @@ Log.d("MainActivity測試用戶id",stuNum);
             }
         });
 
-        //跳轉到我買到的訂單頁面
-        ImageButton ibBuy = findViewById(R.id.dingdan_buy_ib);
-        ibBuy.setOnClickListener(new View.OnClickListener() {
+        //跳轉到我購買的訂單頁面
+        pageC3 = findViewById(R.id.page3);
+        pageC3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MyBuyActivity.class);
