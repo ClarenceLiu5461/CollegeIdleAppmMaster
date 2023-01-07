@@ -59,16 +59,6 @@
             android:text="我的售出"
             android:textSize="15dp"
             android:textAlignment="textStart"/>
-        <Button
-            android:id="@+id/page5"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="70dp"
-            android:layout_marginTop="373dp"
-            android:background="#00FFFFFF"
-            android:text="個人資料"
-            android:textSize="15dp"
-            android:textAlignment="textStart"/>
     </android.support.design.widget.NavigationView>
 
     <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"

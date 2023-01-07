@@ -20,9 +20,5 @@
             android:id="@+id/nav_gigi2"
             android:icon="@drawable/shopping"
             android:title="@string/menu_gigi2" />
-        <item
-            android:id="@+id/nav_gigi3"
-            android:icon="@drawable/person"
-            android:title="@string/menu_gigi2" />
     </group>
 </menu>
