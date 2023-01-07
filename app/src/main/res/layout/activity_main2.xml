@@ -2,10 +2,11 @@
 
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="#FFFFFF">
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
@@ -13,16 +14,58 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        app:menu="@menu/activity_main_drawer"
-        app:headerLayout="@layout/nav_header_main"/>
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/activity_main_drawer">
+
+        <Button
+            android:id="@+id/homepage"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="180dp"
+            android:background="#00FFFFFF"
+            android:text="首頁"
+            android:textAlignment="textStart"
+            android:textSize="15dp" />
+
+        <Button
+            android:id="@+id/addproduct"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="235dp"
+            android:background="#00FFFFFF"
+            android:text="發佈商品"
+            android:textAlignment="textStart"
+            android:textSize="15dp" />
+
+        <Button
+            android:id="@+id/productbuy"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="280dp"
+            android:background="#00FFFFFF"
+            android:text="購買紀錄"
+            android:textAlignment="textStart"
+            android:textSize="15dp" />
+        <Button
+            android:id="@+id/productsell"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="335dp"
+            android:background="#00FFFFFF"
+            android:text="我的售出"
+            android:textSize="15dp"
+            android:textAlignment="textStart"/>
+    </android.support.design.widget.NavigationView>
 
     <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/drawerLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-
 
 
         <!-- 頁面主要內容，用一個Layout包著  -->
@@ -35,14 +78,11 @@
             <!-- 選單 -->
 
 
-
-
             <LinearLayout
                 android:layout_width="240dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="start"
-                android:background="@android:color/white"
-                >
+                android:background="@android:color/white">
                 <!--要包在視窗內的元件 -->
             </LinearLayout>
 
@@ -70,18 +110,17 @@
     </android.support.v4.widget.DrawerLayout>
 
 
-
-
     <TextView
         android:id="@+id/tv_title"
-        android:text="首頁"
-        android:textSize="40sp"
-        android:textColor="@color/colorBlack"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
         android:layout_marginBottom="4dp"
-        android:background="@color/colorWhite"/>
+        android:background="@color/colorWhite"
+        android:gravity="center_horizontal"
+        android:text="首頁"
+        android:textColor="@color/colorBlack"
+        android:textSize="40sp" />
+
     <TextView
         android:id="@+id/tv_refresh"
         android:layout_width="wrap_content"
@@ -93,6 +132,7 @@
         android:text="刷新"
         android:textColor="@color/colorBlack"
         android:textSize="22sp" />
+
     <ImageButton
         android:id="@+id/navidrawer"
         android:layout_width="wrap_content"
@@ -113,116 +153,130 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="65dp"
         app:srcCompat="@drawable/pin_drop" />
+
     <TextView
         android:id="@+id/tv_student_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_title"
-        android:textSize="18sp"
-        android:textColor="@color/colorBlack"
+        android:layout_marginBottom="4dp"
         android:gravity="center_horizontal"
-        android:textStyle="italic"
-        android:layout_marginBottom="4dp"/>
+        android:textColor="@color/colorBlack"
+        android:textSize="18sp"
+        android:textStyle="italic" />
+
     <ImageButton
         android:id="@+id/ib_learning_use"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_below="@+id/tv_student_number"
-        android:src="@drawable/study_goods"
-        android:scaleType="centerCrop"
+        android:layout_marginStart="15dp"
         android:background="@drawable/border_radius_primary"
-        android:layout_marginStart="15dp"/>
+        android:scaleType="centerCrop"
+        android:src="@drawable/study_goods" />
+
     <ImageButton
         android:id="@+id/ib_electric_product"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginStart="110dp"
         android:layout_below="@+id/tv_student_number"
-        android:src="@drawable/electronic_products"
+        android:layout_marginStart="110dp"
+        android:background="@drawable/border_radius_primary"
         android:scaleType="centerCrop"
-        android:background="@drawable/border_radius_primary"/>
+        android:src="@drawable/electronic_products" />
+
     <ImageButton
         android:id="@+id/ib_daily_use"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginStart="205dp"
         android:layout_below="@id/tv_student_number"
-        android:src="@drawable/life_goods"
+        android:layout_marginStart="205dp"
+        android:background="@drawable/border_radius_primary"
         android:scaleType="centerCrop"
-        android:background="@drawable/border_radius_primary"/>
+        android:src="@drawable/life_goods" />
+
     <ImageButton
         android:id="@+id/ib_sports_good"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginStart="310dp"
         android:layout_below="@id/tv_student_number"
-        android:src="@drawable/sports_goods"
+        android:layout_marginStart="310dp"
+        android:background="@drawable/border_radius_primary"
         android:scaleType="centerCrop"
-        android:background="@drawable/border_radius_primary"/>
+        android:src="@drawable/sports_goods" />
+
     <TextView
         android:id="@+id/tv_learning_use"
         android:layout_width="80dp"
         android:layout_height="30dp"
-        android:text="文書用品"
-        android:textStyle="bold"
-        android:textSize="18sp"
         android:layout_below="@+id/ib_learning_use"
-        android:layout_marginStart="15dp"/>
+        android:layout_marginStart="15dp"
+        android:text="文書用品"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/tv_electric_product"
         android:layout_width="80dp"
         android:layout_height="25dp"
-        android:text="電子用品"
-        android:textStyle="bold"
-        android:textSize="18sp"
         android:layout_below="@+id/ib_electric_product"
-        android:layout_marginStart="110dp"/>
+        android:layout_marginStart="110dp"
+        android:text="電子用品"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/tv_daily_use"
         android:layout_width="80dp"
         android:layout_height="25dp"
+        android:layout_below="@+id/ib_daily_use"
+        android:layout_marginStart="205dp"
         android:text="生活用品"
         android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_below="@+id/ib_daily_use"
-        android:layout_marginStart="205dp"/>
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/tv_sports_good"
         android:layout_width="80dp"
         android:layout_height="25dp"
+        android:layout_below="@+id/ib_sports_good"
+        android:layout_marginStart="310dp"
         android:text="體育用品"
         android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_below="@+id/ib_sports_good"
-        android:layout_marginStart="310dp"/>
+        android:textStyle="bold" />
+
     <ListView
         android:id="@+id/lv_all_commodity"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/view2"
         android:layout_below="@+id/tv_electric_product"
-        android:layout_marginTop="4dp"
-        android:layout_above="@+id/view2"/>
+        android:layout_marginTop="4dp" />
 
-    <View android:id="@+id/view1"
+    <View
+        android:id="@+id/view1"
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_above="@+id/view2"
-        android:background="#FFFFFF"
-        android:layout_marginTop="70dp"/>
+        android:layout_marginTop="70dp"
+        android:background="#FFFFFF" />
+
     <ImageButton
         android:id="@+id/ib_home_page"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_above="@+id/tv_home_page"
-        android:src="@drawable/icon_home_page"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="5dp"/>
-    <View android:id="@+id/view2"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/icon_home_page" />
+
+    <View
+        android:id="@+id/view2"
         android:layout_width="2dp"
         android:layout_height="60dp"
         android:layout_above="@+id/view4"
         android:layout_marginStart="70dp"
-    android:background="#FFFFFF"/>
+        android:background="#FFFFFF" />
 
     <ImageButton
         android:id="@+id/ib_add_product"
@@ -273,14 +327,15 @@
         android:layout_marginStart="220dp"
         android:layout_marginBottom="-1dp"
         android:background="#FFFFFF" />
+
     <ImageButton
         android:id="@+id/dingdan"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_above="@+id/tv_personal_center"
-        android:src="@drawable/shopping"
         android:layout_marginStart="240dp"
-        android:layout_marginTop="5dp"/>
+        android:layout_marginTop="5dp"
+        android:src="@drawable/shopping" />
 
     <TextView
         android:id="@+id/dingdan_tv"
@@ -292,6 +347,7 @@
         android:text="我的售出"
         android:textSize="15sp"
         android:textStyle="bold" />
+
     <View
         android:id="@+id/view5"
         android:layout_width="2dp"
@@ -307,19 +363,20 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_above="@+id/tv_personal_center"
-        android:src="@drawable/icon_personal_center"
         android:layout_marginStart="330dp"
-        android:layout_marginTop="5dp"/>
+        android:layout_marginTop="5dp"
+        android:src="@drawable/icon_personal_center" />
+
     <TextView
         android:id="@+id/tv_home_page"
         android:layout_width="35dp"
         android:layout_height="20dp"
-        android:text="首頁"
-        android:textSize="15sp"
-        android:textStyle="bold"
         android:layout_above="@+id/view4"
         android:layout_marginStart="25dp"
-        android:layout_marginBottom="5dp"/>
+        android:layout_marginBottom="5dp"
+        android:text="首頁"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tv_add_product"
@@ -331,21 +388,24 @@
         android:text="發布商品"
         android:textSize="15sp"
         android:textStyle="bold" />
+
     <TextView
         android:id="@+id/tv_personal_center"
         android:layout_width="70dp"
         android:layout_height="20dp"
-        android:text="個人中心"
-        android:textSize="15sp"
-        android:textStyle="bold"
         android:layout_above="@+id/view4"
         android:layout_marginStart="320dp"
-        android:layout_marginBottom="5dp"/>
-    <View android:id="@+id/view4"
+        android:layout_marginBottom="5dp"
+        android:text="個人中心"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/view4"
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:background="@color/colorBlack"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorBlack" />
 
 
 </RelativeLayout>

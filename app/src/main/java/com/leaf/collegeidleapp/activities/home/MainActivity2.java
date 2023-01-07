@@ -1,14 +1,19 @@
 package com.leaf.collegeidleapp.activities.home;
 
+import android.content.ClipData;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -33,11 +38,12 @@ import java.util.List;
  * 主界面活动类
  *
  */
-public class MainActivity2 extends AppCompatActivity {
+public class MainActivity2 extends AppCompatActivity{
 
     ListView lvAllCommodity;
     List<Commodity> allCommodities = new ArrayList<>();
-    ImageButton NaviDrawer,ibLearning,ibElectronic,ibDaily,ibSports;
+    ImageButton ibLearning,ibElectronic,ibDaily,ibSports;
+    Button addproduct,personalcenter,dindan,dindanbuy;
 
     CommodityDbHelper dbHelper;
     AllCommodityAdapter adapter;
@@ -62,13 +68,9 @@ public class MainActivity2 extends AppCompatActivity {
         // 設置Viewlist的適配器
         lvAllCommodity.setAdapter(adapter);
 
-        //NavigationDrawer
-
-
         // 抓取上個頁面的儲存對象
         final Bundle bundle = this.getIntent().getExtras();
         final String Uid = bundle.getString("username");
-
         final TextView tvStuNumber = findViewById(R.id.tv_student_number);
         String str = "";
         if (bundle != null) {
@@ -82,8 +84,8 @@ public class MainActivity2 extends AppCompatActivity {
 Log.d("MainActivity測試用戶id",stuNum);
 
         //跳轉到添加商品介面
-        ImageButton IbAddProduct = findViewById(R.id.ib_add_product);
-        IbAddProduct.setOnClickListener(new View.OnClickListener() {
+        ImageButton AddProduct = findViewById(R.id.ib_add_product);
+        AddProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity2.this, AddCommodityActivity.class);
@@ -245,9 +247,7 @@ Log.d("MainActivity測試用戶id",stuNum);
             public void onClick(View v) {
                 bundle2.putInt("status",3);
                 bundle2.putString("Uid",Uid);
-
                 Log.d("這是生活用品:",Uid);
-
                 Intent intent = new Intent(MainActivity2.this,CommodityTypeActivity.class);
                 intent.putExtras(bundle2);
                 startActivity(intent);

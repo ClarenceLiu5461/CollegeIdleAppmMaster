@@ -22,7 +22,6 @@
         android:theme="@style/AppTheme">
         <activity android:name=".activities.myInfo.MyCollectionActivity"></activity>
         <activity android:name=".activities.home.CommodityTypeActivity" />
-        <activity android:name=".activities.home.CommodityTypeActivity2" />
         <activity android:name=".activities.orders.ReviewCommodityActivity" />
         <activity android:name=".activities.myInfo.MyCommodityActivity" />
         <activity android:name=".activities.myInfo.ModifyInfoActivity" />
