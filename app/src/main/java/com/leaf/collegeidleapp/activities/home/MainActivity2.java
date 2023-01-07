@@ -86,6 +86,7 @@ public class MainActivity2 extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity2.this, MainActivity.class);
+                Toast.makeText(MainActivity2.this,"首頁",Toast.LENGTH_LONG).show();
                 if (bundle != null) {
                     //獲取學生學號
                     bundle.putString("user_id", stuNum);
@@ -102,6 +103,7 @@ public class MainActivity2 extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity2.this, AddCommodityActivity.class);
+                Toast.makeText(MainActivity2.this,"發佈商品",Toast.LENGTH_LONG).show();
                 if (bundle != null) {
                     //獲取學生學號
                     bundle.putString("user_id", stuNum);
@@ -118,6 +120,7 @@ public class MainActivity2 extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MyOrderActivity.class);
+                Toast.makeText(MainActivity2.this,"我的售出",Toast.LENGTH_LONG).show();
                 if (bundle != null) {
                     //抓取學生學號
                     bundle.putString("Uid", stuNum);
@@ -133,6 +136,7 @@ public class MainActivity2 extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MyBuyActivity.class);
+                Toast.makeText(MainActivity2.this,"購買紀錄",Toast.LENGTH_LONG).show();
                 if (bundle != null) {
                     //抓取學生學號
                     bundle.putString("Uid", stuNum);

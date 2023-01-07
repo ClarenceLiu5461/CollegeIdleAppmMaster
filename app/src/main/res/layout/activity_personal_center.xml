@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="個人中心"
+        android:text="個人資料"
         android:textColor="@color/colorBlack"
         android:textSize="40sp"/>
     <ImageView
@@ -19,7 +19,7 @@
         android:layout_below="@id/tv_personal_center1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:src="@drawable/head_portrait"
+        android:src="@drawable/ic_launcher"
         android:scaleType="centerCrop"/>
     <TextView
         android:id="@+id/tv_student_number"
