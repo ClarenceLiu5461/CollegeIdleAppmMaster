@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
     ListView lvAllCommodity;
     List<Commodity> allCommodities = new ArrayList<>();
-    ImageButton NaviDrawer,Searchbutton,Mapbutton,ibLearning,ibElectronic,ibDaily,ibSports;
+    ImageButton NaviDrawer,Searchbutton,Mapbutton,Fabbutton,ibLearning,ibElectronic,ibDaily,ibSports;
 
     CommodityDbHelper dbHelper;
     AllCommodityAdapter adapter;
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         //NavigationDrawer
 
 
-        // 抓取上個頁面的儲存對象
+        // 抓取上個頁面的儲存navidrawer對象
         final Bundle bundle = this.getIntent().getExtras();
         final String Uid = bundle.getString("username");
 
@@ -228,6 +228,7 @@ Log.d("MainActivity測試用戶id",stuNum);
         ibSports = findViewById(R.id.ib_sports_good);
         Searchbutton = findViewById(R.id.searchbutton);
         Mapbutton = findViewById(R.id.mapbutton);
+        Fabbutton = findViewById(R.id.fabbutton);
 
         final Bundle bundle2 = new Bundle();
         //study_goods
@@ -306,6 +307,18 @@ Log.d("MainActivity測試用戶id",stuNum);
                 // Map point based on address
                 Uri location = Uri.parse("geo:22.756600, 120.336256");
                 Intent intent = new Intent(Intent.ACTION_VIEW, location);
+                startActivity(intent);
+            }
+        });
+
+        //fab jump to profile
+        Fabbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bundle2.putInt("status",6);
+                bundle2.putString("Uid",Uid);
+                Intent intent = new Intent(MainActivity.this, PersonalCenterActivity.class);
+                intent.putExtras(bundle2);
                 startActivity(intent);
             }
         });
