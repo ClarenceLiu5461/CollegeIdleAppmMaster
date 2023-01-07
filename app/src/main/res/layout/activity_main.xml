@@ -184,7 +184,7 @@
         android:layout_gravity="bottom|end"
         android:layout_marginLeft="330dp"
         android:layout_marginTop="660dp"
-        android:src="@drawable/ic_launcher_background"
+        android:src="@drawable/person"
         app:elevation="6dp"
         app:pressedTranslationZ="12dp" />
 

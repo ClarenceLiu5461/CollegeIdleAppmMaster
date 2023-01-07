@@ -99,7 +99,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|end"
                 android:layout_margin="16dp"
-                android:src="@drawable/ic_launcher_background"
+                android:src="@drawable/person"
                 app:elevation="6dp"
                 app:pressedTranslationZ="12dp" />
 
