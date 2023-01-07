@@ -39,7 +39,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 主界面活动类
+ * 主界面活動類
  *
  */
 public class MainActivity extends AppCompatActivity {
