@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         //NavigationDrawer
 
 
-        // 抓取上個頁面的儲存navidrawer對象
+        // 抓取上個頁面的儲存對象
         final Bundle bundle = this.getIntent().getExtras();
         final String Uid = bundle.getString("username");
 
