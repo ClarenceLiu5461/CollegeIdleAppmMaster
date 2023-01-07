@@ -59,10 +59,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="87dp"
+        android:layout_gravity="top|start"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="280dp"
         android:text="刷新"
         android:textColor="@color/colorBlack"
         android:textSize="22sp" />
@@ -181,13 +180,14 @@
         android:textStyle="bold"
         android:layout_below="@+id/ib_sports_good"
         android:layout_marginStart="280dp"/>
+
     <ListView
         android:id="@+id/lv_all_commodity"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/tv_electric_product"
         android:layout_marginTop="4dp"
-        android:background="#FFFFFFFF"/>
+        android:background="#FFFFFFFF" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fabbutton"
