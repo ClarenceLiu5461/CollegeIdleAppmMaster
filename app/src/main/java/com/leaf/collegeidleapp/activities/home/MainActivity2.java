@@ -4,6 +4,7 @@ import android.content.ClipData;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.Image;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
@@ -42,7 +43,7 @@ public class MainActivity2 extends AppCompatActivity{
 
     ListView lvAllCommodity;
     List<Commodity> allCommodities = new ArrayList<>();
-    ImageButton ibLearning,ibElectronic,ibDaily,ibSports;
+    ImageButton Searchbutton2,Mapbutton2,Fabbutton2,ibLearning,ibElectronic,ibDaily,ibSports;
     Button addproduct,personalcenter,dindan,dindanbuy;
 
     CommodityDbHelper dbHelper;
@@ -218,6 +219,9 @@ Log.d("MainActivity測試用戶id",stuNum);
         ibElectronic = findViewById(R.id.ib_electric_product);
         ibDaily = findViewById(R.id.ib_daily_use);
         ibSports = findViewById(R.id.ib_sports_good);
+        Searchbutton2 = findViewById(R.id.searchbutton);
+        Mapbutton2 = findViewById(R.id.mapbutton);
+        Fabbutton2 = findViewById(R.id.fabbutton2);
         final Bundle bundle2 = new Bundle();
         //study_goods
         ibLearning.setOnClickListener(new View.OnClickListener() {
@@ -260,6 +264,36 @@ Log.d("MainActivity測試用戶id",stuNum);
                 bundle2.putInt("status",4);
                 bundle2.putString("Uid",Uid);
                 Intent intent = new Intent(MainActivity2.this,CommodityTypeActivity.class);
+                intent.putExtras(bundle2);
+                startActivity(intent);
+            }
+        });
+        Searchbutton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("http://www.google.com");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+        //map button go jump to google map
+        Mapbutton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Map point based on address
+                Uri location = Uri.parse("geo:22.756600, 120.336256");
+                Intent intent = new Intent(Intent.ACTION_VIEW, location);
+                startActivity(intent);
+            }
+        });
+
+        //fab jump to profile
+        Fabbutton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bundle2.putInt("status",6);
+                bundle2.putString("Uid",Uid);
+                Intent intent = new Intent(MainActivity2.this, PersonalCenterActivity.class);
                 intent.putExtras(bundle2);
                 startActivity(intent);
             }
