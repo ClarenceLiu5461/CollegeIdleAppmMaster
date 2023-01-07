@@ -16,6 +16,7 @@
 
 
         <!-- 頁面主要內容，用一個Layout包著  -->
+
         <android.support.design.widget.CoordinatorLayout
             android:id="@+id/coordinatorLayout"
             android:layout_width="match_parent"
@@ -23,14 +24,6 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp">
 
-
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycler_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clipToPadding="false"
-                android:paddingBottom="72dp" />
 
             <android.support.design.widget.FloatingActionButton
                 android:id="@+id/btnAdd"
@@ -41,7 +34,6 @@
                 android:src="@drawable/ic_launcher_background"
                 app:elevation="6dp"
                 app:pressedTranslationZ="12dp" />
-
 
 
         </android.support.design.widget.CoordinatorLayout>
@@ -69,20 +61,40 @@
         android:gravity="center_horizontal"
         android:layout_marginBottom="4dp"
         android:background="@color/colorWhite"/>
+
+    <TextView
+        android:id="@+id/tv_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="340dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="280dp"
+        android:text="刷新"
+        android:textColor="@color/colorBlack"
+        android:textSize="22sp" />
+
     <ImageButton
         android:id="@+id/navidrawer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/menu_48px" />
-    <TextView
-        android:id="@+id/tv_refresh"
+
+    <ImageButton
+        android:id="@+id/searchbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="刷新"
-        android:textSize="22sp"
-        android:textColor="@color/colorBlack"
-        android:layout_marginStart="340dp"
-        android:layout_marginTop="12dp"/>
+        android:layout_alignParentEnd="true"
+        app:srcCompat="@drawable/search" />
+
+    <ImageButton
+        android:id="@+id/mapbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="65dp"
+        app:srcCompat="@drawable/pin_drop" />
+
     <TextView
         android:id="@+id/tv_student_number"
         android:layout_width="match_parent"

@@ -2,6 +2,7 @@ package com.leaf.collegeidleapp.activities.home;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.widget.DrawerLayout;
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
     ListView lvAllCommodity;
     List<Commodity> allCommodities = new ArrayList<>();
-    ImageButton NaviDrawer,ibLearning,ibElectronic,ibDaily,ibSports;
+    ImageButton NaviDrawer,Searchbutton,Mapbutton,ibLearning,ibElectronic,ibDaily,ibSports;
 
     CommodityDbHelper dbHelper;
     AllCommodityAdapter adapter;
@@ -225,6 +226,9 @@ Log.d("MainActivity測試用戶id",stuNum);
         ibElectronic = findViewById(R.id.ib_electric_product);
         ibDaily = findViewById(R.id.ib_daily_use);
         ibSports = findViewById(R.id.ib_sports_good);
+        Searchbutton = findViewById(R.id.searchbutton);
+        Mapbutton = findViewById(R.id.mapbutton);
+
         final Bundle bundle2 = new Bundle();
         //study_goods
         NaviDrawer.setOnClickListener(new View.OnClickListener() {
@@ -281,6 +285,27 @@ Log.d("MainActivity測試用戶id",stuNum);
                 bundle2.putString("Uid",Uid);
                 Intent intent = new Intent(MainActivity.this,CommodityTypeActivity.class);
                 intent.putExtras(bundle2);
+                startActivity(intent);
+            }
+        });
+        //study_goods
+
+        //search button jump to google.com
+        Searchbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("http://www.google.com");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+        //map button go jump to google map
+        Mapbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Map point based on address
+                Uri location = Uri.parse("geo:22.756600, 120.336256");
+                Intent intent = new Intent(Intent.ACTION_VIEW, location);
                 startActivity(intent);
             }
         });
