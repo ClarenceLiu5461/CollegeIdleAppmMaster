@@ -98,7 +98,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|end"
-                android:layout_margin="16dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
                 android:src="@drawable/person"
                 app:elevation="6dp"
                 app:pressedTranslationZ="12dp" />
@@ -172,83 +173,77 @@
 
     <ImageButton
         android:id="@+id/ib_learning_use"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_below="@+id/tv_student_number"
-        android:layout_marginStart="15dp"
-        android:background="@drawable/border_radius_primary"
+        android:src="@drawable/study_goods"
         android:scaleType="centerCrop"
-        android:src="@drawable/study_goods" />
-
+        android:background="@drawable/border_radius_primary"
+        android:layout_marginStart="15dp"/>
     <ImageButton
         android:id="@+id/ib_electric_product"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="100dp"
         android:layout_below="@+id/tv_student_number"
-        android:layout_marginStart="110dp"
-        android:background="@drawable/border_radius_primary"
+        android:src="@drawable/electronic_products"
         android:scaleType="centerCrop"
-        android:src="@drawable/electronic_products" />
-
+        android:background="@drawable/border_radius_primary"/>
     <ImageButton
         android:id="@+id/ib_daily_use"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="195dp"
         android:layout_below="@id/tv_student_number"
-        android:layout_marginStart="205dp"
-        android:background="@drawable/border_radius_primary"
+        android:src="@drawable/life_goods"
         android:scaleType="centerCrop"
-        android:src="@drawable/life_goods" />
-
+        android:background="@drawable/border_radius_primary"/>
     <ImageButton
         android:id="@+id/ib_sports_good"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="280dp"
         android:layout_below="@id/tv_student_number"
-        android:layout_marginStart="310dp"
-        android:background="@drawable/border_radius_primary"
+        android:src="@drawable/sports_goods"
         android:scaleType="centerCrop"
-        android:src="@drawable/sports_goods" />
+        android:background="@drawable/border_radius_primary"/>
 
     <TextView
         android:id="@+id/tv_learning_use"
         android:layout_width="80dp"
         android:layout_height="30dp"
-        android:layout_below="@+id/ib_learning_use"
-        android:layout_marginStart="15dp"
         android:text="文書用品"
+        android:textStyle="bold"
         android:textSize="18sp"
-        android:textStyle="bold" />
-
+        android:layout_below="@+id/ib_learning_use"
+        android:layout_marginStart="15dp"/>
     <TextView
         android:id="@+id/tv_electric_product"
         android:layout_width="80dp"
         android:layout_height="25dp"
-        android:layout_below="@+id/ib_electric_product"
-        android:layout_marginStart="110dp"
         android:text="電子用品"
+        android:textStyle="bold"
         android:textSize="18sp"
-        android:textStyle="bold" />
-
+        android:layout_below="@+id/ib_electric_product"
+        android:layout_marginStart="100dp"/>
     <TextView
         android:id="@+id/tv_daily_use"
         android:layout_width="80dp"
         android:layout_height="25dp"
-        android:layout_below="@+id/ib_daily_use"
-        android:layout_marginStart="205dp"
         android:text="生活用品"
         android:textSize="18sp"
-        android:textStyle="bold" />
-
+        android:textStyle="bold"
+        android:layout_below="@+id/ib_daily_use"
+        android:layout_marginStart="195dp"/>
     <TextView
         android:id="@+id/tv_sports_good"
         android:layout_width="80dp"
         android:layout_height="25dp"
-        android:layout_below="@+id/ib_sports_good"
-        android:layout_marginStart="310dp"
         android:text="體育用品"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_below="@+id/ib_sports_good"
+        android:layout_marginStart="280dp"/>
 
     <ListView
         android:id="@+id/lv_all_commodity"
